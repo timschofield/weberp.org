@@ -197,3 +197,28 @@ background:#F6EFBD;
 color:#1A1A1A;
 padding:2px;
 }
+fieldset{
+width:90%;
+margin-left:5%;
+background:#FFFFFF;
+color:#070723;
+text-align:left;
+border-radius:17px;
+border:0px;
+margin-bottom:15px;
+margin-top:1%;
+}
+fieldset legend{
+color:#070723;
+background:#FFFFFF;
+padding:10px;
+border-radius:17px;
+border:2px solid #070723;
+font-weight:bold;
+}
+#code {
+background:#C0BE9C;
+color:#4D4D4D;
+padding:2px;
+font-family:"Courier New", Courier, monospace;
+}
