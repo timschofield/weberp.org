@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta name="generator" content="Hugo 0.134.3">
+  <meta charset='utf-8'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>webERP - Development</title>
+
+  <link href="favicon.ico" rel='shortcut icon' type='image/x-icon'>
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="home">
+
+<header>
+
+			<a href="./index.html" class="ItemLink"><div id="logo">
+				<div class="logo logo-left">web</div><div class="logo logo-right">ERP</div>
+			</div></a>
+  <span id="tagline">Practical Web-Based ERP Software</span>
+
+</header>
+
+<section>
+<h3>This page was initially written by Andrew Couling (<a href="https://github.com/andrewcouling" target="_blank">https://github.com/andrewcouling</a>), and updated for this site. There are many different workflows with Git, but this is the one we suggest to use as a collaborator with the webERP project on GitHub:</h3>
+<h1 class="main-title">Basic setup</h1>
+
+<h2 class="sub-title">GitHub account</h2>
+<p class="sub-para">webERP uses github to manage our code. If you haven't already signed up, you need to create a GitHub account at http://www.github.com. This is free, and simple to do.</p>
+<p class="sub-para">You will need to have the Git SCM system installed on your local computer. There are versions for most operating systems available from <a href="https://git-scm.com/downloads" target="_blank">here</a></p>
+<h2 class="sub-title">Fork the Repository</h2>
+<p class="sub-para">On the GitHub site, navigate to the webERP project repository (<a href="https://github.com/timschofield/webERP" target="_blank">https://github.com/timschofield/webERP</a>), and click on the 'Fork' button at the top right area of the page (as shown in the image below).</p>
+<img class="screenshot" src="images/github.png" />
+<p class="sub-para">This makes a copy of that repository into your own github account, which is where you will upload your changes, since you only have "write" permissions in your own repository.</p>
+
+<p class="sub-para">Next, clone the repository to your own computer. (see below)</p>
+
+<h1 class="main-title">Cloning a repository</h1>
+
+<p class="sub-para">1. Go to your GitHub account page</p>
+<p class="sub-para">2. Go to your fork of the webERP repository, e.g. https://github.com/YOURUSERNAME/webERP</p>
+<p class="sub-para">3. On the right side of the page, you should see a button labelled '<> Code'. Click on the button.</p>
+<img class="screenshot" src="images/CodeButton.png" />
+<p class="sub-para">4. The pop-up box which appears will display a URL. Click on the icon next to the URL field, to copy the URL to your clipboard.</p>
+<img class="sub-image" src="images/CodeURL.png" />
+
+<p class="sub-para">There are many applications that inteface with the Git system, and you are urged to find the one that suits you best. For the sake of this tutorial we will use the command line, and <a href="https://www.sourcetreeapp.com/" target="_blank">SourceTree<a>. Now switch to the desktop application of choice and use that URL to clone the repository locally:</p>
+
+<h2 class="sub-title">Command line:</h2>
+
+<p class="sub-para">1. Pick a working directory on your PC</p>
+<p class="sub-para">2. cd into that directory</p>
+<p class="sub-para">3. Type: git clone PASTE-THAT-URL-HERE. (note the . at the end, which says "put it in the current directory")</p>
+
+<h2 class="sub-title">SourceTree:</h2>
+
+<p class="sub-para">1. Choose File, New Clone...</p>
+<p class="sub-para">2. In the Source Path/URL, paste the URL you copied from GitHub</p>
+<p class="sub-para">3. For the destination path, pick a folder on your PC</p>
+<p class="sub-para">4. For the bookmark name, call it whatever friendly name you want to remember this repo by. It will show up in SourceTree's bookmarks list of repositories you've got.</p>
+<p class="sub-para">5. Click Clone or OK to have it start the clone. It will take a few seconds for it to download the repository contents to your computer.</p>
+
+<h1 class="main-title">Add an upstream remote</h1>
+
+<p class="sub-para">To keep your own fork up-to-date, you'll need to periodically merge updates from the main webERP repository. This involves telling your own local (on your PC) git repository about the main webERP repository location. To do this you must add what's called an "upstream remote".</p>
+
+<h2 class="sub-title">Command line:</h2>
+
+<p class="sub-para">1. cd into the directory of the repository you're adding the remote to</p>
+<p class="sub-para">2. Type: git remote add upstream https://github.com/webERP-team/webERP.git</p>
+<p class="sub-para">3. Type: git fetch upstream</p>
+
+<h2 class="sub-title">SourceTree:</h2>
+
+<p class="sub-para">1. Choose Repositories from the main menu</p>
+<p class="sub-para">2. Choose Repository Settings...</p>
+<p class="sub-para">3. Click Add</p>
+<p class="sub-para">4. For Remote Name, use: upstream</p>
+<p class="sub-para">6. For the URL use: https://github.com/webERP-team/webERP.git</p>
+<p class="sub-para">7. For the GitHub username, enter your own GitHub account name</p>
+<p class="sub-para">8. Click OK</p>
+<p class="sub-para">9. Click Fetch</p>
+
+<h1 class="main-title">Making a working-branch</h1>
+
+<p class="sub-para">Any time you're going to contribute code changes, you'll want to first make a working branch. (For more on branches, see the documentation on the Git web site.) Branches are how git keeps different versions of changes separate from each other until such time as someone approves merging them together into the main branch.</p>
+
+<h2 class="sub-title">Pick a branch name</h2>
+
+<p class="sub-para">Decide on a new branch name. (The branch name should be brief, but meaningful; ideally a max of 6 words, all hyphenated, no spaces.)</p>
+
+<h2 class="sub-title">Make the branch</h2>
+
+<p class="sub-para">Now use that name for name-of-your-branch-here, below:</p>
+
+<h2 class="sub-title">Command line:</h2>
+
+<p class="sub-para">1. cd into the directory of the repository you're intending to make changes to</p>
+<p class="sub-para">2. In this example we'll be branching from the 'master' branch</p>
+<p class="sub-para">3. Type: git branch name-of-your-new-branch-here master</p>
+<p class="sub-para">4. Type: git checkout name-of-your-new-branch-here</p>
+
+<h2 class="sub-title">SourceTree:</h2>
+
+<p class="sub-para">1. First, make sure you're in "Log View" (View, Log View)</p>
+<p class="sub-para">2. Find where it shows upstream/master, and right-click on that row. Choose Branch... from the pop-up menu</p>
+<p class="sub-para">3. Give it the new branch name</p>
+<p class="sub-para">4. Leave the "checkout new branch" box checked</p>
+<p class="sub-para">5. Click Create Branch or OK</p>
+
+<h1 class="main-title">Make your code changes</h1>
+
+<p class="sub-para">1. Edit or create whatever files are applicable to the changes you wish to submit for consideration.</p>
+<p class="sub-para">2. Test your code. Test to make sure your changes work, and that you've not broken anything else in the process.</p>
+<p class="sub-para">3. Once your code is ready for submission, you'll need to commit the changes, and push them to your GitHub account and then create a Pull Request. Those steps are described below.</p>
+<p class="sub-para">4. Make sure your code complies with the <a href="./CodingStandards.html">webERP coding standards</a>, else it may be rejected.</p>
+<p class="sub-para">5. If your code can be tested with phpunit, be sure to include those tests in your commits and pull request.</p>
+
+<h1 class="main-title">Commits</h1>
+
+<p class="sub-para">To commit your code, you must first "stage" the files which are to be included. See the git docs mentioned at the top of this page for more detailed explanation of what this means.</p>
+
+<p class="sub-para">Once you've staged the files, then you commit them, which saves that group of changes together.</p>
+
+<p class="sub-para">You can make multiple commits (that is, stage the files and commit them) towards any given issue. This allows you to make numerous smaller commits which are easily described in connection with the specific files that relate to those smaller changes.</p>
+
+<h2 class="sub-title">Command line:</h2>
+
+    cd into the directory of the repository you're committing from
+    Type: git status (This will give you a list of changed/added/deleted files)
+    Type: git add filename1.php filename2.php (and any other files, etc)
+    Type: git commit (This will pop up your text editor where you can supply a commit message. See explanation of commit messages in the sub section below)
+    Save the message using whatever method your text editor uses to save-and-exit
+    This will have the commit saved locally. You can continue working and making more commits until you're ready to push them all up to GitHub (see pushing commits below)
+
+<h2 class="sub-title">SourceTree:</h2>
+
+    First, go into File Status view. Click on "Working Copy" in the left nav menu under File Status. Or, use the View menu and choose File Status View. Here you'll see a list of files on-screen which have changed in some way (edits, adds, deletes). You can also see exactly what's changed by clicking on those files and viewing the "diff" on the other side of the screen.
+    For each file that you wish to include in the current commit, highlight it in the bottom part of the window, and click the Stage Selected button on the button-bar. It may ask you to confirm that you wish to Add it. (The Windows version has a tiny up-arrow that lets you do the staging as well, instead of using the Add from the top button-bar).
+    Once your files are all staged, click the Commit button in the button bar
+    This will open a dialog where you can supply a commit message. See the guidance around commit messages in the next section below.
+    Click the commit button in the bottom right. Your commit is now saved locally on your PC. You can continue making more commits until you're ready to push them all to GitHub, as described below.
+
+About commit messages
+
+    The "subject" or "first line" of a commit message should be no more than 50 characters.
+    The next lines can have as much detail as you like. Consider using GitHub Markdown syntax for any formatting you might wish to include in the message. Feel free to use blank lines, and even use hyphens to create bulleted lists (hyphen plus a space)
+    If you're contributing code to help with an "Issue" that's already listed on the webERP GitHub Issues page, include that issue number in your commit message, with the hashtag in front of it, like this: #101 for issue number 101.
+    Further to the point above, if your commit "fixes" or "closes" or "resolves" an existing open issue then include the word "Fixes" before the issue number, ie: "Fixes #101" somewhere in your commit message. This will cause GitHub to close the "issue" ticket when your pull request is merged, and helps keep things tidy.
+    If you're committing code that addresses a bug reported on the webERP support forum, include the URL for that bug from the forum, so we can cross-reference it.
+
+Suggested reading: 7 Principles for Good Commit Messages
+Pushing Commits To GitHub
+
+Now that you've made some commits to git on your local PC, you must push them to (your account on) GitHub in order to prepare to share them.
+
+    Command line:
+
+    cd into the directory of your working repository
+    Type: git push origin name-of-my-working-branch
+
+    SourceTree:
+
+    Click the Push button in the top button bar.
+    From the pulldown for "Push to repository", be sure that "origin" is selected. That's your GitHub repository, and you must push to there.
+    Next make sure you check the box next to the branch you've been making your commits in. Uncheck all the others.
+    Click OK
+    That's it! Now all the commits you've made in that branch on your PC will show up in your GitHub account.
+
+Pull Request
+
+(You'll also see Pull Request referred to as a PR)
+
+After you've pushed your working branch (ie: containing your new commits) to your own GitHub account, you will need to create a Pull Request in order to ask the webERP developer team to review it and consider it for inclusion in the next release.
+
+You'll do this from your browser:
+
+    Go to your GitHub account in your browser.
+    Go to your webERP repository.
+    You will see a green "Compare and Pull Request" button. Click it. (If it's been several hours since you did the push, it might not show the green bar. In that case, click the 'Branches' link, where you will see a Pull Request button next to each of your branches. Click the one next to the branch you want to do the pull request from.)
+    Now you can review the collection of commits and file changes, and add a descriptive message to the pull request. If you're fixing something that's already got an open issue for it, be sure that the issue number is included in your Pull Request message. ie: #101. If you believe your Pull Request fully fixes the open issue, then say "Fixes #101", as the keyword "Fixes" helps do proper cleanup of tickets once closed. There may be multiple branches within the 'upstream remote' webERP repository, so ensure that your pull request "compare" is indeed being compared to the intended branch.
+    Click the next green button to Create Pull Request
+    Now you wait for others to review your code. The webERP developers (and anyone else who has clicked "Watch" on the main webERP repository) will get an alert about the pull request. Anyone wishing to reply with their opinions of what you've submitted can engage in dialog with you and one another while the code is reviewed.
+    If your code hasn't complied with the coding standards, or has bugs or is incomplete, you may be asked to submit more commits to rectify the problems. In that case, you will repeat the steps above for making code changes, making commits, and pushing those commits to GitHub. As long as you push to the same branch on GitHub, then all those commits will automatically be included in the pull request, so reviewers can see the updates you push.
+    Once the webERP development team decides what to do with it, they have basically three options: to accept it (merge the pull request) or defer it (until a later date) or reject it (not merge it and close the pull request). GitHub will automatically email you about all updates and comments made about your Pull Request.
+
+Keeping Your Local Branch Current
+
+When you or others make pull requests that are accepted into the webERP repository, that will make your own local copy be outdated. To keep current, you must periodically bring in the changes from the "upstream remote" we created earlier. (see: https://help.github.com/articles/syncing-a-fork/)
+
+    Command line:
+
+    Type: git fetch upstream
+    Type: git checkout master (ie: if you're going to pull changes from the master branch)
+    Type: git merge upstream/master (merges your local copy with the upstream remote)
+    Type: git push (brings your forked repository up-to-date)
+
+    SourceTree:
+
+    Click the Pull button in the top button bar
+    For Pull From Repository, choose "upstream" from the pulldown menu
+    For Remote Branch To Pull, choose "master"
+    Leave the "commit merged changes immediately" box checked, and the others unchecked.
+    Click OK
+
+Cleaning up old branches, or grabbing new branches
+
+From time to time you and others will add or remove branches from the GitHub repositories, and you will want to keep your PC in sync with those.
+
+    Command line:
+
+    Type: git fetch upstream
+
+    SourceTree:
+
+    Click the Fetch button on the button bar
+    There are 3 checkboxes. Check them all. (You could opt to not prune/delete any local branches you've created, if you want to preserve them to understand your own work history, by unchecking the corresponding box.) (You could also fetch from individual remotes manually, and prune only when fetching from upstream, but never prune when fetching from your own GitHub master)
+    Click OK
+
+Pages 6
+
+Home
+Coding Standards
+Developing webERP Using Github
+Git Client Applications
+GitHub Workflow
+
+    Basic setup
+    Cloning a repository
+    Add an upstream remote
+    Making a working-branch
+    Pick a branch name
+    Make the branch
+    Make your code changes
+    Commits
+    About commit messages
+    Pushing Commits To GitHub
+    Pull Request
+    Keeping Your Local Branch Current
+    Cleaning up old branches, or grabbing new branches
+
+    Release Checklist
+
+Clone this wiki locally
+Footer
+</section>
+
+<footer>
+	<div class="badges-container">
+	<!-- Begin SF Tag -->
+		<div class="sf-root" data-id="70949" data-badge="oss-users-love-us-black" style="width:48px";>
+			<a href="https://sourceforge.net/projects/web-erp/" target="_blank">webERP Accounting &amp; Business Management</a>
+		</div>
+		<script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=70949';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+		</script>
+	<!-- End SF Tag -->
+	<!-- Begin SF Tag -->
+		<div class="sf-root" data-id="70949" data-badge="oss-community-choice-black" data-metadata="achievement=oss-community-choice" style="width:48px">
+			<a href="https://sourceforge.net/projects/web-erp/" target="_blank">webERP Accounting &amp; Business Management</a>
+		</div>
+		<script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=70949';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+		</script>
+	<!-- End SF Tag -->
+	<!-- Begin SF Tag -->
+		<div class="sf-root" data-id="70949" data-badge="oss-sf-favorite-black" data-metadata="achievement=oss-sf-favorite" style="width:48px">
+			<a href="https://sourceforge.net/projects/web-erp/" target="_blank">webERP Accounting &amp; Business Management</a>
+		</div>
+		<script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=70949';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+		</script>
+	<!-- End SF Tag -->
+	<!-- Begin SF Tag -->
+		<div class="sf-root" data-id="70949" data-badge="oss-community-leader-black" data-metadata="achievement=oss-community-leader" style="width:48px">
+			<a href="https://sourceforge.net/projects/web-erp/" target="_blank">webERP Accounting &amp; Business Management</a>
+		</div>
+		<script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=70949';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+		</script>
+	<!-- End SF Tag -->
+	<!-- Begin SF Tag -->
+		<div class="sf-root" data-id="70949" data-badge="oss-open-source-excellence-black" data-metadata="achievement=oss-open-source-excellence" style="width:48px">
+			<a href="https://sourceforge.net/projects/web-erp/" target="_blank">webERP Accounting &amp; Business Management</a>
+		</div>
+		<script>(function () {var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=70949';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc, p);})();
+		</script>
+	<!-- End SF Tag -->
+	</div>
+	<span id="copyright">&copy Tim Schofield 2024</span>
+</footer>
+
+
+</body>
+</html>
