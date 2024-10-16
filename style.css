@@ -190,4 +190,10 @@ margin-left:2rem;
 }
 .sub-image{
 margin-left:2rem;
+max-width:40%;
+}
+.code{
+background:#F6EFBD;
+color:#1A1A1A;
+padding:2px;
 }

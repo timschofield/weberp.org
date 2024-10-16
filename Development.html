@@ -28,7 +28,8 @@
 </header>
 
 <section>
-<h3>This page was initially written by Andrew Couling (<a href="https://github.com/andrewcouling" target="_blank">https://github.com/andrewcouling</a>), and updated for this site. There are many different workflows with Git, but this is the one we suggest to use as a collaborator with the webERP project on GitHub:</h3>
+	<h1 class="main-title">Contributing to webERP</h1>
+<h3>This page was initially written by Andrew Couling (<a href="https://github.com/andrewcouling" target="_blank">https://github.com/andrewcouling</a>), and updated for this site. There are many different workflows with Git, but this is the one we suggest to use as a collaborator with the webERP project on GitHub. For more information on using Git, see the documentation at <a href="https://git-scm.com/doc">https://git-scm.com/doc</a></h3>
 <h1 class="main-title">Basic setup</h1>
 
 <h2 class="sub-title">GitHub account</h2>
@@ -56,7 +57,7 @@
 
 <p class="sub-para">1. Pick a working directory on your PC</p>
 <p class="sub-para">2. cd into that directory</p>
-<p class="sub-para">3. Type: git clone PASTE-THAT-URL-HERE. (note the . at the end, which says "put it in the current directory")</p>
+<p class="sub-para">3. Type: <span class="code">git clone PASTE-THAT-URL-HERE.</span> (note the . at the end, which says "put it in the current directory")</p>
 
 <h2 class="sub-title">SourceTree:</h2>
 
@@ -73,8 +74,8 @@
 <h2 class="sub-title">Command line:</h2>
 
 <p class="sub-para">1. cd into the directory of the repository you're adding the remote to</p>
-<p class="sub-para">2. Type: git remote add upstream https://github.com/webERP-team/webERP.git</p>
-<p class="sub-para">3. Type: git fetch upstream</p>
+<p class="sub-para">2. Type: <span class="code">git remote add upstream https://github.com/timschofield/webERP.git</span></p>
+<p class="sub-para">3. Type: <span class="code">git fetch upstream</span></p>
 
 <h2 class="sub-title">SourceTree:</h2>
 
@@ -82,7 +83,7 @@
 <p class="sub-para">2. Choose Repository Settings...</p>
 <p class="sub-para">3. Click Add</p>
 <p class="sub-para">4. For Remote Name, use: upstream</p>
-<p class="sub-para">6. For the URL use: https://github.com/webERP-team/webERP.git</p>
+<p class="sub-para">6. For the URL use: https://github.com/timschofield/webERP.git</p>
 <p class="sub-para">7. For the GitHub username, enter your own GitHub account name</p>
 <p class="sub-para">8. Click OK</p>
 <p class="sub-para">9. Click Fetch</p>
@@ -103,8 +104,8 @@
 
 <p class="sub-para">1. cd into the directory of the repository you're intending to make changes to</p>
 <p class="sub-para">2. In this example we'll be branching from the 'master' branch</p>
-<p class="sub-para">3. Type: git branch name-of-your-new-branch-here master</p>
-<p class="sub-para">4. Type: git checkout name-of-your-new-branch-here</p>
+<p class="sub-para">3. Type: <span class="code">git branch name-of-your-new-branch-here master</span></p>
+<p class="sub-para">4. Type: <span class="code">git checkout name-of-your-new-branch-here</span></p>
 
 <h2 class="sub-title">SourceTree:</h2>
 
@@ -132,123 +133,98 @@
 
 <h2 class="sub-title">Command line:</h2>
 
-    cd into the directory of the repository you're committing from
-    Type: git status (This will give you a list of changed/added/deleted files)
-    Type: git add filename1.php filename2.php (and any other files, etc)
-    Type: git commit (This will pop up your text editor where you can supply a commit message. See explanation of commit messages in the sub section below)
-    Save the message using whatever method your text editor uses to save-and-exit
-    This will have the commit saved locally. You can continue working and making more commits until you're ready to push them all up to GitHub (see pushing commits below)
+<p class="sub-para">1. cd into the directory of the repository you're committing from</p>
+<p class="sub-para">2. Type: <span class="code">git status</span> (This will give you a list of changed/added/deleted files)</p>
+<p class="sub-para">3. Type: <span class="code">git add filename1.php filename2.php</span> (and any other files, etc)</p>
+<p class="sub-para">4. Type: <span class="code">git commit</span> (This will pop up your text editor where you can supply a commit message. See explanation of commit messages in the sub section below)</p>
+<p class="sub-para">5. Save the message using whatever method your text editor uses to save-and-exit</p>
+<p class="sub-para">6. This will have the commit saved locally. You can continue working and making more commits until you're ready to push them all up to GitHub (see pushing commits below)</p>
 
 <h2 class="sub-title">SourceTree:</h2>
 
-    First, go into File Status view. Click on "Working Copy" in the left nav menu under File Status. Or, use the View menu and choose File Status View. Here you'll see a list of files on-screen which have changed in some way (edits, adds, deletes). You can also see exactly what's changed by clicking on those files and viewing the "diff" on the other side of the screen.
-    For each file that you wish to include in the current commit, highlight it in the bottom part of the window, and click the Stage Selected button on the button-bar. It may ask you to confirm that you wish to Add it. (The Windows version has a tiny up-arrow that lets you do the staging as well, instead of using the Add from the top button-bar).
-    Once your files are all staged, click the Commit button in the button bar
-    This will open a dialog where you can supply a commit message. See the guidance around commit messages in the next section below.
-    Click the commit button in the bottom right. Your commit is now saved locally on your PC. You can continue making more commits until you're ready to push them all to GitHub, as described below.
+<p class="sub-para">1. First, go into File Status view. Click on "Working Copy" in the left nav menu under File Status. Or, use the View menu and choose File Status View. Here you'll see a list of files on-screen which have changed in some way (edits, adds, deletes). You can also see exactly what's changed by clicking on those files and viewing the "diff" on the other side of the screen.</p>
+<p class="sub-para">2. For each file that you wish to include in the current commit, highlight it in the bottom part of the window, and click the Stage Selected button on the button-bar. It may ask you to confirm that you wish to Add it. (The Windows version has a tiny up-arrow that lets you do the staging as well, instead of using the Add from the top button-bar).</p>
+<p class="sub-para">3. Once your files are all staged, click the Commit button in the button bar</p>
+<p class="sub-para">4. This will open a dialog where you can supply a commit message. See the guidance around commit messages in the next section below.</p>
+<p class="sub-para">5. Click the commit button in the bottom right. Your commit is now saved locally on your PC. You can continue making more commits until you're ready to push them all to GitHub, as described below.</p>
 
-About commit messages
+<h1 class="main-title">About commit messages</h1>
 
-    The "subject" or "first line" of a commit message should be no more than 50 characters.
-    The next lines can have as much detail as you like. Consider using GitHub Markdown syntax for any formatting you might wish to include in the message. Feel free to use blank lines, and even use hyphens to create bulleted lists (hyphen plus a space)
-    If you're contributing code to help with an "Issue" that's already listed on the webERP GitHub Issues page, include that issue number in your commit message, with the hashtag in front of it, like this: #101 for issue number 101.
-    Further to the point above, if your commit "fixes" or "closes" or "resolves" an existing open issue then include the word "Fixes" before the issue number, ie: "Fixes #101" somewhere in your commit message. This will cause GitHub to close the "issue" ticket when your pull request is merged, and helps keep things tidy.
-    If you're committing code that addresses a bug reported on the webERP support forum, include the URL for that bug from the forum, so we can cross-reference it.
+<p class="sub-para">1. The "subject" or "first line" of a commit message should be no more than 50 characters.</p>
+<p class="sub-para">2. The next lines can have as much detail as you like. Consider using GitHub Markdown syntax for any formatting you might wish to include in the message. Feel free to use blank lines, and even use hyphens to create bulleted lists (hyphen plus a space)</p>
+<p class="sub-para">3. If you're contributing code to help with an "Issue" that's already listed on the webERP GitHub Issues page, include that issue number in your commit message, with the hashtag in front of it, like this: #101 for issue number 101.</p>
+<p class="sub-para">4. Further to the point above, if your commit "fixes" or "closes" or "resolves" an existing open issue then include the word "Fixes" before the issue number, ie: "Fixes #101" somewhere in your commit message. This will cause GitHub to close the "issue" ticket when your pull request is merged, and helps keep things tidy.</p>
+<p class="sub-para">5. If you're committing code that addresses a bug reported on the webERP support forum, include the URL for that bug from the forum, so we can cross-reference it.</p>
 
-Suggested reading: 7 Principles for Good Commit Messages
-Pushing Commits To GitHub
+<p class="sub-para">Suggested reading: <a href="https://chris.beams.io/posts/git-commit/#seven-rules" target="_blank">7 Principles for Good Commit Messages</a></p>
 
-Now that you've made some commits to git on your local PC, you must push them to (your account on) GitHub in order to prepare to share them.
+<h1 class="main-title">Pushing Commits To GitHub</h1>
 
-    Command line:
+<p class="sub_para">Now that you've made some commits to git on your local PC, you must push them to (your account on) GitHub in order to prepare to share them.</p>
 
-    cd into the directory of your working repository
-    Type: git push origin name-of-my-working-branch
+<h2 class="sub-title">Command line:</h2>
 
-    SourceTree:
+<p class="sub-para">1. cd into the directory of your working repository</p>
+<p class="sub-para">2. Type: <span class="code">git push origin name-of-my-working-branch</span></p>
 
-    Click the Push button in the top button bar.
-    From the pulldown for "Push to repository", be sure that "origin" is selected. That's your GitHub repository, and you must push to there.
-    Next make sure you check the box next to the branch you've been making your commits in. Uncheck all the others.
-    Click OK
-    That's it! Now all the commits you've made in that branch on your PC will show up in your GitHub account.
+<h2 class="sub-title">SourceTree:</h2>
 
-Pull Request
+<p class="sub-para">1. Click the Push button in the top button bar.</p>
+<p class="sub-para">2. From the pulldown for "Push to repository", be sure that "origin" is selected. That's your GitHub repository, and you must push to there.</p>
+<p class="sub-para">3. Next make sure you check the box next to the branch you've been making your commits in. Uncheck all the others.</p>
+<p class="sub-para">4. Click OK</p>
+<p class="sub-para">5. That's it! Now all the commits you've made in that branch on your PC will show up in your GitHub account.</p>
 
-(You'll also see Pull Request referred to as a PR)
+<h1 class="main-title">Pull Request</h1>
 
-After you've pushed your working branch (ie: containing your new commits) to your own GitHub account, you will need to create a Pull Request in order to ask the webERP developer team to review it and consider it for inclusion in the next release.
+<p class="sub-para">(You'll also see Pull Request referred to as a PR)</p>
 
-You'll do this from your browser:
+<p class="sub-para">After you've pushed your working branch (ie: containing your new commits) to your own GitHub account, you will need to create a Pull Request in order to ask the webERP developer team to review it and consider it for inclusion in the next release.</p>
 
-    Go to your GitHub account in your browser.
-    Go to your webERP repository.
-    You will see a green "Compare and Pull Request" button. Click it. (If it's been several hours since you did the push, it might not show the green bar. In that case, click the 'Branches' link, where you will see a Pull Request button next to each of your branches. Click the one next to the branch you want to do the pull request from.)
-    Now you can review the collection of commits and file changes, and add a descriptive message to the pull request. If you're fixing something that's already got an open issue for it, be sure that the issue number is included in your Pull Request message. ie: #101. If you believe your Pull Request fully fixes the open issue, then say "Fixes #101", as the keyword "Fixes" helps do proper cleanup of tickets once closed. There may be multiple branches within the 'upstream remote' webERP repository, so ensure that your pull request "compare" is indeed being compared to the intended branch.
-    Click the next green button to Create Pull Request
-    Now you wait for others to review your code. The webERP developers (and anyone else who has clicked "Watch" on the main webERP repository) will get an alert about the pull request. Anyone wishing to reply with their opinions of what you've submitted can engage in dialog with you and one another while the code is reviewed.
-    If your code hasn't complied with the coding standards, or has bugs or is incomplete, you may be asked to submit more commits to rectify the problems. In that case, you will repeat the steps above for making code changes, making commits, and pushing those commits to GitHub. As long as you push to the same branch on GitHub, then all those commits will automatically be included in the pull request, so reviewers can see the updates you push.
-    Once the webERP development team decides what to do with it, they have basically three options: to accept it (merge the pull request) or defer it (until a later date) or reject it (not merge it and close the pull request). GitHub will automatically email you about all updates and comments made about your Pull Request.
+<h2 class="sub-title">You'll do this from your browser:</h2>
 
-Keeping Your Local Branch Current
+<p class="sub-para">1. Go to your GitHub account in your browser.</p>
+<p class="sub-para">2. Go to your webERP repository.</p>
+<p class="sub-para">3. You will see a green "Compare and Pull Request" button. Click it. (If it's been several hours since you did the push, it might not show the green bar. In that case, click the 'Branches' link, where you will see a Pull Request button next to each of your branches. Click the one next to the branch you want to do the pull request from.)</p>
+<p class="sub-para">4. Now you can review the collection of commits and file changes, and add a descriptive message to the pull request. If you're fixing something that's already got an open issue for it, be sure that the issue number is included in your Pull Request message. ie: #101. If you believe your Pull Request fully fixes the open issue, then say "Fixes #101", as the keyword "Fixes" helps do proper cleanup of tickets once closed. There may be multiple branches within the 'upstream remote' webERP repository, so ensure that your pull request "compare" is indeed being compared to the intended branch.</p>
+<p class="sub-para">5. Click the next green button to Create Pull Request</p>
+<p class="sub-para">6. Now you wait for others to review your code. The webERP developers (and anyone else who has clicked "Watch" on the main webERP repository) will get an alert about the pull request. Anyone wishing to reply with their opinions of what you've submitted can engage in dialog with you and one another while the code is reviewed.</p>
+<p class="sub-para">7. If your code hasn't complied with the coding standards, or has bugs or is incomplete, you may be asked to submit more commits to rectify the problems. In that case, you will repeat the steps above for making code changes, making commits, and pushing those commits to GitHub. As long as you push to the same branch on GitHub, then all those commits will automatically be included in the pull request, so reviewers can see the updates you push.</p>
+<p class="sub-para">8. Once the webERP development team decides what to do with it, they have basically three options: to accept it (merge the pull request) or defer it (until a later date) or reject it (not merge it and close the pull request). GitHub will automatically email you about all updates and comments made about your Pull Request.</p>
 
-When you or others make pull requests that are accepted into the webERP repository, that will make your own local copy be outdated. To keep current, you must periodically bring in the changes from the "upstream remote" we created earlier. (see: https://help.github.com/articles/syncing-a-fork/)
+<h1 class="main-title">Keeping Your Local Branch Current</h1>
 
-    Command line:
+<p class="sub-para">When you or others make pull requests that are accepted into the webERP repository, that will make your own local copy be outdated. To keep current, you must periodically bring in the changes from the "upstream remote" we created earlier. (see: https://help.github.com/articles/syncing-a-fork/)</p>
 
-    Type: git fetch upstream
-    Type: git checkout master (ie: if you're going to pull changes from the master branch)
-    Type: git merge upstream/master (merges your local copy with the upstream remote)
-    Type: git push (brings your forked repository up-to-date)
+<h2 class="sub-title">Command line:</h2>
 
-    SourceTree:
+<p class="sub-para">Type: <span class="code">git fetch upstream</span></p>
+<p class="sub-para">Type: <span class="code">git checkout master</span> (ie: if you're going to pull changes from the master branch)</p>
+<p class="sub-para">Type: <span class="code">git merge upstream/master</span> (merges your local copy with the upstream remote)</p>
+<p class="sub-para">Type: <span class="code">git push</span> (brings your forked repository up-to-date)</p>
 
-    Click the Pull button in the top button bar
-    For Pull From Repository, choose "upstream" from the pulldown menu
-    For Remote Branch To Pull, choose "master"
-    Leave the "commit merged changes immediately" box checked, and the others unchecked.
-    Click OK
+<h2 class="sub-title">SourceTree:</h2>
 
-Cleaning up old branches, or grabbing new branches
+<p class="sub-para">Click the Pull button in the top button bar</p>
+<p class="sub-para">For Pull From Repository, choose "upstream" from the pulldown menu</p>
+<p class="sub-para">For Remote Branch To Pull, choose "master"</p>
+<p class="sub-para">Leave the "commit merged changes immediately" box checked, and the others unchecked.</p>
+<p class="sub-para">Click OK</p>
 
-From time to time you and others will add or remove branches from the GitHub repositories, and you will want to keep your PC in sync with those.
+<h1 class="main-title">Cleaning up old branches, or grabbing new branches</h1>
 
-    Command line:
+<p class="sub-para">From time to time you and others will add or remove branches from the GitHub repositories, and you will want to keep your PC in sync with those.</p>
 
-    Type: git fetch upstream
+<h2 class="sub-title">Command line:</h2>
 
-    SourceTree:
+<p class="sub-para">Type: <span class="code">git fetch upstream</span>
 
-    Click the Fetch button on the button bar
-    There are 3 checkboxes. Check them all. (You could opt to not prune/delete any local branches you've created, if you want to preserve them to understand your own work history, by unchecking the corresponding box.) (You could also fetch from individual remotes manually, and prune only when fetching from upstream, but never prune when fetching from your own GitHub master)
-    Click OK
+<h2 class="sub-title">SourceTree:</h2>
 
-Pages 6
+<p class="sub-para">Click the Fetch button on the button bar</p>
+<p class="sub-para">There are 3 checkboxes. Check them all. (You could opt to not prune/delete any local branches you've created, if you want to preserve them to understand your own work history, by unchecking the corresponding box.) (You could also fetch from individual remotes manually, and prune only when fetching from upstream, but never prune when fetching from your own GitHub master)</p>
+<p class="sub-para">Click OK</p>
 
-Home
-Coding Standards
-Developing webERP Using Github
-Git Client Applications
-GitHub Workflow
-
-    Basic setup
-    Cloning a repository
-    Add an upstream remote
-    Making a working-branch
-    Pick a branch name
-    Make the branch
-    Make your code changes
-    Commits
-    About commit messages
-    Pushing Commits To GitHub
-    Pull Request
-    Keeping Your Local Branch Current
-    Cleaning up old branches, or grabbing new branches
-
-    Release Checklist
-
-Clone this wiki locally
-Footer
 </section>
 
 <footer>
