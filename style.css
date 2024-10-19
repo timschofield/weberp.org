@@ -23,7 +23,7 @@ font-size:120%;
 position:relative;
 font-family: Arial,sans-serif;
 display:inline;
-font-size:3rem;
+font-size:4rem;
 width:auto;
 cursor:pointer;
 text-decoration:none;
@@ -58,7 +58,7 @@ text-decoration:none;
 #tagline{
 color:white;
 padding-bottom:0.7rem;
-margin-top:0.5em;
+margin-top:0.2em;
 font-size:130%;
 margin-right:1.5em;
 float:right;
@@ -111,6 +111,7 @@ border-radius:5px;
 }
 .icons{
 width:48px;
+height:48px;
 }
 .title{
 padding-left:8px;
@@ -175,14 +176,14 @@ color:#0D1117;
 border-radius:5px;
 }
 .main-title{
-font-size:3em;
+font-size:2.5em;
 }
 .sub-title{
-font-size:2em;
+font-size:1.5em;
 margin-left:2rem;
 }
 .sub-para{
-margin-left:2rem;
+margin-left:1.5rem;
 }
 .screenshot{
 width:80%;
@@ -221,4 +222,60 @@ background:#C0BE9C;
 color:#4D4D4D;
 padding:2px;
 font-family:"Courier New", Courier, monospace;
+}
+.manual-container {
+display: flex;
+flex-wrap: wrap;
+margin-top:1em;
+margin-left:4%;
+margin-right:4%;
+width:95%;
+}
+.manual-container > .manual-index {
+background-color: #000000;
+flex: 1 0 0;
+margin: 10px;
+padding: 20px;
+max-width:300px;
+font-size:1em;
+color:#FFFFFF;
+border-radius:5px;
+text-decoration:none;
+}
+.manual-container > a > .manual-index-item {
+background-color: #f1f1f1;
+margin: 10px;
+padding: 20px;
+font-size:1em;
+color:#FFFFFF;
+border-radius:5px;
+}
+.manual-container > .manual-index > .manual-index-item > a{
+text-decoration:none;
+color:white;
+}
+.manual-container > .manual-page {
+background-color: #000000;
+flex: 10 0 10em;
+margin: 10px;
+padding: 20px;
+font-size:1em;
+color:#FFFFFF;
+border-radius:5px;
+min-width:300px;
+}
+.nav-item {
+vertical-align: top;
+display: inline-block;
+text-align: center;
+width: auto;
+margin-top:0px;
+}
+.nav-caption {
+display: block;
+font-size:0.6em;
+color:white;
+}
+.nav-item > a {
+text-decoration:none;
 }
