@@ -45,10 +45,10 @@
 
 <h2><a id="Employees">Setting Up Employees</a></h2>
 <p>Labour in webERP is actually a special type of item - this allows the routings to be defined in the bill of materials along with all the other physical components. Labour items are simply stock items that have a stock category that is a labour type. Child items of labour type stock categories are all labour items. The first step to setup labour is to setup a labour type stock catergory. Since the GL posting for labour is set up at this level a labour type stock category is required for each type of labour that needs to be posted to a different GL account. e.g. perhaps and engineering firm has a separate cost centre for engineering labour/cost from it&quot;s manufacturing - in this case engineering labour would require a separate labour type.</p>
-<p align="center"><img src="doc/Manual/images/LabourStockCategory.png"></p>
+<p align="center"><img src="Manual/images/LabourStockCategory.png"></p>
 <p>Note that the stock category screen changes when the stock type is set to &quot;Labour&quot; now, what was the stock account for a normal stock category becomes the labour &quot;recovery&quot; account - this is now a profit and loss GL account where the labour costs are credited to. Note that the stock adjustments account will never be used for dummy/service or labour type stock categories as these will never have physical quantites of stock held. Hence no adjustment will ever be required! Also, what was the</p>
 <p>Once the labour type stock category is defined any number of labour type items can be defined like any other stock item. However, since each employee is mapped to a particular labour item it is only necessary to define labour type items for each category of labour where they will have a different cost. Perhaps tradesfolk, apprentices, supervisors may be set up with different costs - but all posted in the GL on the same basis using the same labour stock category.</p>
 <p>Having set up the necessary labour stock categories and labour items in those categories, then the employees can be defined</p>
-<p align="center"><img src="doc/Manual/images/Employees.png"></p>
+<p align="center"><img src="Manual/images/Employees.png"></p>
 </body>
 </html>
