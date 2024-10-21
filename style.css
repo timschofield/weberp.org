@@ -11,8 +11,8 @@
 @media (prefers-color-scheme: light) {
 :root {
 --main-background:#ADD8E6;
---logo_main_colour1:#BFBFBF;
---logo_main_colour2:#777777;
+--logo_main_colour1:#FFFFFF;
+--logo_main_colour2:#1A1A1A;
 --border_colour:#000000;
 --text_colour:#1A1A1A;
 --header_background:#E5E5E5;
