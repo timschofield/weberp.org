@@ -104,6 +104,7 @@ display:inline-flex;
 width:50%;
 float:left;
 margin:1em;
+min-width:300px;
 }
 .items-container {
 display: grid;
