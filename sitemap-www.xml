@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.weberp.org/</loc>
+  <lastmod>2024-10-21T09:14:54+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.weberp.org/index.html</loc>
+  <lastmod>2024-10-21T09:14:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.weberp.org/Features.html</loc>
+  <lastmod>2024-10-18T17:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.weberp.org/Development.html</loc>
+  <lastmod>2024-10-18T17:28:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.weberp.org/demo/</loc>
+  <lastmod>2024-10-22T07:37:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.weberp.org/Documentation.html</loc>
+  <lastmod>2024-10-18T17:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.weberp.org/CodingStandards.html</loc>
+  <lastmod>2024-10-18T17:16:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
