@@ -134,13 +134,16 @@ text-align:center;;
 }
 }
 .about{
-background:#A9A9F7;
+background:#DCDCF7;
 max-width:90%;
 position:relative;
 top:0.5rem;
 margin: 0 auto;
 border-radius:5px;
 border:0px;
+}
+.about-link{
+color:black;
 }
 legend {
 background-color:#4682B4;
