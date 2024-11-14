@@ -186,6 +186,15 @@ font-size:1rem;
 color:#0D1117;
 border-radius:5px;
 }
+.items-container > a > div:hover {
+background-color: #DAC9C9;
+margin: 10px;
+padding: 20px;
+min-width:40%;
+font-size:1rem;
+color:#0D1117;
+border-radius:5px;
+}
 .icons{
 width:48px;
 height:48px;
