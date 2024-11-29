@@ -9,6 +9,8 @@ box-sizing:border-box;
 --border_colour:#FFFFFF;
 --text_colour:#E6EAF7;
 --header_background:#010409;
+--about-background:#DCDCF7;
+--about-border:#DCDCF7;
 }
 }
 @media (prefers-color-scheme: light) {
@@ -19,6 +21,8 @@ box-sizing:border-box;
 --border_colour:#000000;
 --text_colour:#1A1A1A;
 --header_background:#E5E5E5;
+--about-background:#FFFFFF;
+--about-border:#000000;
 }
 }
 body {
@@ -134,13 +138,14 @@ text-align:center;;
 }
 }
 .about{
-background:#DCDCF7;
+background:var(--about-background);
 max-width:90%;
 position:relative;
 top:0.5rem;
 margin: 0 auto;
 border-radius:5px;
-border:0px;
+border-color:var(--about-border);
+border:2px solid;
 }
 .about-link{
 color:black;
