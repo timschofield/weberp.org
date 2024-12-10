@@ -64,239 +64,233 @@
 			</span>
 		</header>
 		<section>
-			<h1>WebERP Feature List</h1>
-			<h3>We do our best to keep this list up to date, but as new features are always getting added it may be out of date</h3>
+			<h1>webERP Features</h1>
+			<p>We do our best to keep this list up to date. If you don't see something you need, you can post questions in the Discussions forum <i>How To?</i> category.</p>
 			<fieldset class="feature">
 				<legend><img class="icons" src="images/general.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="General Features" /><span class="legend-text">General</span></legend>
-				﻿
 				<ul>
-					<li>﻿﻿Entirely web-based﻿﻿. Runs on any web-server that can accommodate PHP - can use a professionally managed server of an ISP instead of having to purchase and maintain own server</li>
-					<li>﻿﻿Produces reports to Portable Document Format - PDF for accurate positioning of text﻿﻿ ﻿﻿All reports and scripts follow the same conventions for consistent and modifiable PHP scripts, easily followable by business people.﻿﻿ ﻿</li>
-					<li>All processing is on the web-server with no installation required on client PCs - only a browser and a PDF reader is required.﻿﻿ ﻿</li>
-					<li>Multi-language - each user can see the interface in their preferred language - 37 translations are available and bundled with the system.﻿</li>
-					<li>﻿﻿Numbers are displayed appropriately for the language selected and input is allowed in this format.﻿﻿</li>
-					<li>﻿﻿Fully utf-8 compliant. PDF reports produced using adobe CIF fonts for lightweight PDFs using utf-8 character set for any language.﻿﻿</li>
-					<li>﻿Multi-theme - each user can see the interface in their preferred graphical theme. A choice of 9 themes are available and bundled with the system.﻿﻿</li>
-					<li>Can be integrated with a wiki (any wakka fork) to hold narrative on items, suppliers and customers. e.g. The wiki may contain any information particular to the customer with links to say credit history - call log for customer services/sales/accounts etc﻿﻿</li>
-					<li>The underlying code of the system is written in a way so as to maximise it's readability for those new to PHP coding. The idea being that business users will be able to administer and adapt the system to exactly suit their needs.</li>
+					<li>Entirely web-based. Can be used on any web server that supports PHP. Use your own server or a managed server from an ISP to avoid purchase and maintenance costs.</li>
+					<li>All processing is done on the web server. No software is required to access webERP other than a recent web browser (and optionally a PDF reader).</li>
+					<li>webERP scripts are written to maximise readability for business users so they can customize webERP for unique needs. Scripts follow webERP coding standards for consistency, clarity and ease of customizing.</li>
+					<li>Produces PDF reports for accurately positioned text. Report scripts follow webERP coding standards for consistency, clarity and ease of customizing.</li>
+					<li>Multi-language - users can select their own preferred language from the 37 languages currently available.</li>
+					<li>Numbers are displayed appropriately for the selected language (input also uses the selected language).</li>
+					<li>Fully UTF-8 compliant. PDF reports use Adobe CIF fonts for small file sizes using UTF-8 character sets for any language.</li>
+					<li>Multi-theme - users can select the display theme from the 9 themes currently available.</li>
+					<li>Items, Suppliers and Customers have optional Wiki integration for storing related notes. For example, notes on Item use or approved OEMs, Supplier account information or detailed contact information, or Customer credit history or contact history for service, sales and payments.</li>
 				</ul>
 			</fieldset>
 			<fieldset class="feature">
-				<legend><img class="icons" src="images/lock.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Security Features" /><span class="legend-text">Security﻿</span>﻿</legend>
+				<legend><img class="icons" src="images/lock.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Security Features" /><span class="legend-text">Security</span></legend>
 				<ul>
-					<li>﻿﻿Users can be defined with access to only certain options using a role based model.</li>
-					<li>Functions which they do not have access to will not be shown.﻿</li>
-					<li>﻿﻿Users can be limited to specific inventory locations﻿﻿</li>
-					<li>﻿﻿Users must be specifically be allowed access to enter transactions for each bank account defined﻿﻿</li>
-					<li>﻿﻿Options applicable to certain roles can be graphically configured and users defined as fulfilling a given role.﻿﻿</li>
-					<li>﻿﻿Sales people logins can be defined limiting these users to see only their own customer accounts and orders.﻿</li>
-					<li>﻿﻿Incorrect entry of password (more than 3 times) blocks the account until reset by the System Administrator. This prevents password crackers from breaking the security.﻿﻿</li>
-					<li>﻿﻿Pages can be encrypted using SSL and webERP can be configured to only display pages using SSL to ensure that all information passing over the internet is encrypted.﻿﻿</li>
-					<li>﻿﻿Users can be defined to see only certain modules on the main menu - so menu options that they will not have access to are not even displayed on screen.﻿﻿</li>
-					<li>﻿﻿HTTP security can be configured over the top of the inbuilt security to provide two levels of security - the first to access the web-server at all and the second to actually get into webERP﻿﻿</li>
-					<li>﻿﻿An audit trail of which users did what is retained and is automatically maintained based on how long the information is required to be kept﻿﻿</li>
-					<li>﻿﻿All inputs are sanitised to prevent SQL injections and cross site scripting.﻿﻿</li>
+					<li>Users can be defined with access to only certain options using a role based model.</li>
+					<li>Functions which users do not have access to will not appear in the menu system.</li>
+					<li>Users can be limited to specific inventory locations.</li>
+					<li>Users must be specifically given access to enter transactions for each defined bank account.</li>
+					<li>Options applicable to certain roles can be graphically configured and users defined as fulfilling a given role.</li>
+					<li>Sales people logins can be defined limiting these users to see only their own customer accounts and orders.</li>
+					<li>Attempting to login with an incorect password three times locks the user account to prevent brute-force password cracking (only a webERP administrator can unlock an account).</li>
+					<li>All communication over the internet can be encrypted using SSL to prevent evesdropping on a connection.</li>
+					<li>Users can be defined to see only certain modules on the main menu - so menu options that they will not have access to are not even displayed on screen.</li>
+					<li>HTTP security can be configured over the top of the inbuilt security to provide two levels of security - the first to access the web-server at all and the second to actually get into webERP.</li>
+					<li>An audit trail is kept of every transaction or data entry and the user that performed it.</li>
+					<li>All data is sanitised to prevent SQL injection and cross-site scripting.</li>
 				</ul>
 			</fieldset>
 			<fieldset class="feature">
-				﻿
-				<legend>﻿<img class="icons" src="images/sales.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Sales and Orders" /><span class="legend-text">Sales and Orders</span>﻿﻿</legend>
+				<legend><img class="icons" src="images/sales.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Sales and Orders" /><span class="legend-text">Sales and Orders</span></legend>
 				<ul>
-					<li>﻿﻿Quotations can be entered and printed as quotations then changed to an order if the customer accepts without re-entering﻿﻿</li>
-					<li>﻿﻿Customer orders can be entered and maintained and referenced back to the customer﻿'﻿s order number.﻿﻿</li>
-					<li>﻿The cumulative quantity on order for a stock item shows as a demand in stock status inquiries.﻿</li>
-					<li>﻿﻿The cumulative quantity on order for assembly items shows the demand against its components in the stock status inquiries.﻿﻿</li>
-					<li>﻿﻿The quantity of the order left to invoice is maintained and updated for invoices and credit notes raised against the order.﻿﻿</li>
-					<li>﻿﻿The orders entered can be invoiced directly with little or no additional input.﻿﻿</li>
-					<li>Multiple dispatches are possible from a single order. Order retains references to each dispatch.﻿﻿</li>
-					<li>﻿﻿Differences from the order are logged when dispatches are not the same as the ordered quantities for reporting delivery in full on time.﻿﻿</li>
-					<li>﻿﻿Pricing automatically returned based on the customer sales type, branch and currency.﻿﻿</li>
-					<li>﻿﻿Pricing can be set to be effective from specific dates and to finish on a final date﻿﻿</li>
-					<li>﻿﻿Pricing is by currency﻿﻿</li>
-					<li>﻿﻿Any number of price lists can be maintained.</li>
-					<li>Customers are defined to get their pricing from a specific price list. However, special prices can be defined as an exception for a given customer or even a particular branch of a customer﻿</li>
-					<li>﻿﻿Quantity break discounts across a range of products are automatically calculated based on a discount matrix.</li>
-					<li>﻿﻿Packing slips printable on laser or pre-printed stationery.</li>
-					<li>﻿﻿User selectable inventory location to pick from.﻿﻿</li>
-					<li>﻿Counter Sales can be entered with receipts created simultaneously for rudimentary POS type application. This does not integrate with cash drawers or EFTPOS machine﻿﻿</li>
+					<li>Quotations can be entered and printed as quotations then changed to an order if the customer accepts without re-entering</li>
+					<li>Customer orders can be entered and maintained and referenced back to the customer's order number.</li>
+					<li>The cumulative quantity on order for a stock item shows as a demand in stock status inquiries.</li>
+					<li>The cumulative quantity on order for assembly items shows the demand against its components in the stock status inquiries.</li>
+					<li>The quantity of the order left to invoice is maintained and updated for invoices and credit notes raised against the order.</li>
+					<li>The orders entered can be invoiced directly with little or no additional input.</li>
+					<li>Multiple dispatches are possible from a single order. Order retains references to each dispatch.</li>
+					<li>Differences from the order are logged when dispatches are not the same as the ordered quantities for reporting delivery in full on time.</li>
+					<li>Pricing automatically returned based on the customer sales type, branch and currency.</li>
+					<li>Pricing can be set to be effective from specific dates and to finish on a final date</li>
+					<li>Pricing is by currency</li>
+					<li>Any number of price lists can be maintained.</li>
+					<li>Customers are defined to get their pricing from a specific price list. However, special prices can be defined as an exception for a given customer or even a particular branch of a customer</li>
+					<li>Quantity break discounts across a range of products are automatically calculated based on a discount matrix.</li>
+					<li>Packing slips printable on laser or pre-printed stationery.</li>
+					<li>User selectable inventory location to pick from.</li>
+					<li>Counter Sales can be entered with receipts created simultaneously for rudimentary POS type application. This does not integrate with cash drawers or EFTPOS machine</li>
 					<li>Automatic freight calculations based on shipping method and delivery address</li>
-					<li>Orders calculate weight and cubic based on item unit weight and cubic.﻿</li>
-					<li>﻿﻿Free form entry of delivery addresses defaulting to the customer branch physical address.</li>
-					<li>﻿﻿Automatically recurring orders can be entered and if the orders are for "service items" the order can also be automatically invoiced.</li>
-					<li>﻿﻿Daily sales reports and ad-hoc sales graphs﻿﻿</li>
+					<li>Orders calculate weight and cubic based on item unit weight and cubic.</li>
+					<li>Free form entry of delivery addresses defaulting to the customer branch physical address.</li>
+					<li>Automatically recurring orders can be entered and if the orders are for "service items" the order can also be automatically invoiced.</li>
+					<li>Daily sales reports and ad-hoc sales graphs</li>
 					<li>Delivery In Full On Time reporting</li>
 				</ul>
 			</fieldset>
 			<fieldset class="feature">
-				﻿
-				<legend>﻿<img class="icons" src="images/tax.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Taxes" /><span class="legend-text">Taxes</span>﻿﻿</legend>
+				<legend><img class="icons" src="images/tax.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Taxes" /><span class="legend-text">Taxes</span></legend>
 				<ul>
-					﻿﻿﻿﻿
-					<li>Very flexible taxation options suitable for Canada, US, South Africa, UK, Australia, NZ and most other countries﻿﻿ ﻿﻿Tax rates dependent on the type of product - using tax categories﻿﻿</li>
-					<li>﻿﻿Tax rates dependent on the location of the warehouse dispatched from﻿﻿ ﻿﻿Tax rates dependent on the location of the customer﻿﻿</li>
-					<li>﻿﻿Multiple taxes payable to different tax authorities﻿﻿</li>
-					<li>Each tax posted to different user-definable general ledger accounts - if linked to AR/AP﻿﻿</li>
+					<li>Very flexible taxation options suitable for Canada, US, South Africa, UK, Australia, NZ and most other countries Tax rates dependent on the type of product - using tax categories</li>
+					<li>Tax rates dependent on the location of the warehouse dispatched from Tax rates dependent on the location of the customer</li>
+					<li>Multiple taxes payable to different tax authorities</li>
+					<li>Each tax posted to different user-definable general ledger accounts - if linked to AR/AP</li>
 				</ul>
 			</fieldset>
 			<fieldset class="feature">
-				<legend>﻿﻿﻿<img class="icons" src="images/ar.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Accounts Receivable" /><span class="legend-text">Accounts Receivable</span>﻿﻿</legend>
+				<legend><img class="icons" src="images/ar.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Accounts Receivable" /><span class="legend-text">Accounts Receivable</span></legend>
 				<ul>
-				<li>﻿﻿Overdues inquiry that takes into account delivery days to the customer﻿'﻿s branch and the actual (user definable) payment terms applicable to the customer, supported by detailed inquiry of actual invoices overdue.</li>
-				<li>﻿﻿Full on-screen inquiry on a customer's account, complete with invoice details and narrative which appeared on the invoice. Drill down to source document invoice or credit note.﻿﻿</li>
-				<li>﻿﻿Invoice can be emailed to customers together with pdf attachments dependent on items invoices eg. warranty, datasheets, instructions, manuals etc.﻿</li>
-				<li>﻿﻿Inquiries on payments received will show how a payment was allocated to invoices and the difference on exchange attributable to each invoice.﻿</li>
-				<li>﻿﻿Full integration with stock records and general ledger - a full trail of journals for each transaction is maintained a drill down to the general ledger transactions for each transaction on a customers account is available from the customer inquiry page.</li>
-				<li>﻿﻿Flexible general ledger postings for sales and if required as well cost of sales based on sales area and product category.</li>
-				<li>General ledger integration is optional.﻿</li>
-				<li>﻿﻿Open item - full analysis of the outstanding balance is maintained and printed on statements for maximum information to the customer.</li>
-				<li>﻿﻿Statements can show transactions settled this month or only outstanding transactions as at the date of printing.</li>
-				<li>﻿﻿Flexible user definable sales analysis reports to pdf or spreadsheet (csv comma separated values).</li>
+				<li>Overdues inquiry that takes into account delivery days to the customer's branch and the actual (user definable) payment terms applicable to the customer, supported by detailed inquiry of actual invoices overdue.</li>
+				<li>Full on-screen inquiry on a customer's account, complete with invoice details and narrative which appeared on the invoice. Drill down to source document invoice or credit note.</li>
+				<li>Invoice can be emailed to customers together with pdf attachments dependent on items invoices eg. warranty, datasheets, instructions, manuals etc.</li>
+				<li>Inquiries on payments received will show how a payment was allocated to invoices and the difference on exchange attributable to each invoice.</li>
+				<li>Full integration with stock records and general ledger - a full trail of journals for each transaction is maintained a drill down to the general ledger transactions for each transaction on a customers account is available from the customer inquiry page.</li>
+				<li>Flexible general ledger postings for sales and if required as well cost of sales based on sales area and product category.</li>
+				<li>General ledger integration is optional.</li>
+				<li>Open item - full analysis of the outstanding balance is maintained and printed on statements for maximum information to the customer.</li>
+				<li>Statements can show transactions settled this month or only outstanding transactions as at the date of printing.</li>
+				<li>Flexible user definable sales analysis reports to pdf or spreadsheet (csv comma separated values).</li>
 				<li>Report definitions can be saved for re-running or automating email delivery from a scheduled job.</li>
-				<li>﻿﻿Retrospective de-allocation and re-allocation of receipts or credit notes agains charges with re-calculation of differences on exchange and corresponding general ledger journals.</li>
-				<li>﻿﻿Any number of branch delivery addresses can be added serviced by different sales people with different tax authorities and different areas for sales analysis purposes.</li>
-				<li>﻿﻿Unlimited accounts and unlimited number of branches (ship to addresses) for each account.</li>
-				<li>﻿﻿Shipping method updated by branch.﻿﻿ ﻿﻿Customer accounts can be in any currency.</li>
-				<li>Individual rate for each invoice, default to currency table rate.﻿﻿</li>
-				<li>﻿﻿Currency table can be set to be automatically updated daily from European central bank published rates.</li>
-				<li>﻿﻿Invoices and credit notes created in pdf.﻿</li>
-				<li>﻿﻿Email of invoices and credit notes.</li>
-				<li>﻿﻿Credit notes can be produced from one click taking the details of a selected invoice for subsequent modification.</li>
-				<li>﻿﻿Transaction inquiries show sequence of invoices, credit notes and receipts entered.</li>
-				<li>﻿﻿Option to produce integrated google maps of customer locations (and suppliers)﻿﻿</li>
+				<li>Retrospective de-allocation and re-allocation of receipts or credit notes agains charges with re-calculation of differences on exchange and corresponding general ledger journals.</li>
+				<li>Any number of branch delivery addresses can be added serviced by different sales people with different tax authorities and different areas for sales analysis purposes.</li>
+				<li>Unlimited accounts and unlimited number of branches (ship to addresses) for each account.</li>
+				<li>Shipping method updated by branch. Customer accounts can be in any currency.</li>
+				<li>Individual rate for each invoice, default to currency table rate.</li>
+				<li>Currency table can be set to be automatically updated daily from European central bank published rates.</li>
+				<li>Invoices and credit notes created in pdf.</li>
+				<li>Email of invoices and credit notes.</li>
+				<li>Credit notes can be produced from one click taking the details of a selected invoice for subsequent modification.</li>
+				<li>Transaction inquiries show sequence of invoices, credit notes and receipts entered.</li>
+				<li>Option to produce integrated google maps of customer locations (and suppliers)</li>
 				<ul>
 			</fieldset>
 			<fieldset class="feature">
-				<legend>﻿﻿﻿﻿﻿<img class="icons" src="images/inventory.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Inventory" /><span class="legend-text">Inventory</span>﻿</legend>
+				<legend><img class="icons" src="images/inventory.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Inventory" /><span class="legend-text">Inventory</span></legend>
 				<ul>
-					<li>﻿Unlimited number of warehouses (stocking locations), stock quantities are maintained for an unlimited number of locations.</li>
-					<li>﻿﻿Selling prices for a stock item can be set for each sales type defined in any (and all) currency(ies) allowing great pricing flexibility</li>
+					<li>Unlimited number of warehouses (stocking locations), stock quantities are maintained for an unlimited number of locations.</li>
+					<li>Selling prices for a stock item can be set for each sales type defined in any (and all) currency(ies) allowing great pricing flexibility</li>
 					<li>Pricing can also be set specific to an individual customer account or even a specific customer branch.</li>
-					<li>﻿﻿Automatic back ordering. Sales orders yet to be delivered can be automatically back ordered at the time of invoicing or the balance of the order canceled as appropriate.</li>
-					<li>﻿﻿A history of stock movements is maintained by stock item allowing full traceability including serialised and lot/batch numbered stock items.</li>
-					<li>﻿﻿Allows Dummy (service) stock items which can be invoiced, priced, costed but with no stock record maintained for items such as labour or services.</li>
-					<li>﻿﻿Kit-set parts can be defined. An order for a kit-set part explodes into the components defined for the parts at the predefined quantities as extended by the number of the kitset item ordered all priced individually. These component quantities are then available on the order for modification by the user.﻿</li>
-					<li>﻿﻿Assembly parts can be defined in a similar way to kitsets. These parts exist only for ordering, pricing, invoicing and sales analysis. No stock balance is maintained, instead the quantities of the components are updated in proportion to the quantity defined in the assembly.</li>
-					<li>﻿﻿Invoice and credit note inquiries are linked to stock movements so the detail of items sold on an invoice can be queried calling up the actual invoice or credit note that caused the stock movement.</li>
-					<li>﻿﻿Standard cost manually maintained or automatically maintained weighted average cost.</li>
-					<li>﻿﻿Inventory usage by month inquiry by location and over all locations.﻿</li>
-					<li>﻿Inventory planning report showing the last 4 months and the current months sales including sales of assembly components.</li>
-					<li>﻿﻿Receiving inventory against purchase orders creates journals in the general ledger to reflect the increase in stock value and the amount owing to a supplier.</li>
-					<li>﻿﻿Stock transfers to other inventory locations can raise transfer dockets.</li>
-					<li>﻿﻿Re-order quantities can be maintained.</li>
-					<li>﻿﻿Inventory adjustments can create general ledger entries to reflect write on or off of stock value.﻿</li>
-					<li>﻿Inventory cost changes can create general ledger entries to reflect write on or off of stock value.</li>
-					<li>﻿﻿A stock taking system allows business to continue recording system stock quantities at the time of counting adjustments created based on these quantities and the sum of all quantities entered as counted for the item.</li>
+					<li>Automatic back ordering. Sales orders yet to be delivered can be automatically back ordered at the time of invoicing or the balance of the order canceled as appropriate.</li>
+					<li>A history of stock movements is maintained by stock item allowing full traceability including serialised and lot/batch numbered stock items.</li>
+					<li>Allows Dummy (service) stock items which can be invoiced, priced, costed but with no stock record maintained for items such as labour or services.</li>
+					<li>Kit-set parts can be defined. An order for a kit-set part explodes into the components defined for the parts at the predefined quantities as extended by the number of the kitset item ordered all priced individually. These component quantities are then available on the order for modification by the user.</li>
+					<li>Assembly parts can be defined in a similar way to kitsets. These parts exist only for ordering, pricing, invoicing and sales analysis. No stock balance is maintained, instead the quantities of the components are updated in proportion to the quantity defined in the assembly.</li>
+					<li>Invoice and credit note inquiries are linked to stock movements so the detail of items sold on an invoice can be queried calling up the actual invoice or credit note that caused the stock movement.</li>
+					<li>Standard cost manually maintained or automatically maintained weighted average cost.</li>
+					<li>Inventory usage by month inquiry by location and over all locations.</li>
+					<li>Inventory planning report showing the last 4 months and the current months sales including sales of assembly components.</li>
+					<li>Receiving inventory against purchase orders creates journals in the general ledger to reflect the increase in stock value and the amount owing to a supplier.</li>
+					<li>Stock transfers to other inventory locations can raise transfer dockets.</li>
+					<li>Re-order quantities can be maintained.</li>
+					<li>Inventory adjustments can create general ledger entries to reflect write on or off of stock value.</li>
+					<li>Inventory cost changes can create general ledger entries to reflect write on or off of stock value.</li>
+					<li>A stock taking system allows business to continue recording system stock quantities at the time of counting adjustments created based on these quantities and the sum of all quantities entered as counted for the item.</li>
 					<li>General ledger integration creates the necessary journals to reflect the changes to stock values.</li>
-					<li>﻿﻿Controlled items allow referencing of each stock movement to the bundles/batch references.</li>
-					<li>﻿﻿Serialiased inventory allows controlled items to be in units of one. Ie a reference for each individual item.</li>
-					<li>﻿﻿Unlimited user defined fields specific to each inventory category for additional important information required to be stored against items﻿﻿</li>
+					<li>Controlled items allow referencing of each stock movement to the bundles/batch references.</li>
+					<li>Serialiased inventory allows controlled items to be in units of one. Ie a reference for each individual item.</li>
+					<li>Unlimited user defined fields specific to each inventory category for additional important information required to be stored against items</li>
 					<li>Weighted Average (automatic) or standard (manually maintained) costing</li>
 				</ul>
 			</fieldset>
 			<fieldset class="feature">
-				<legend>﻿﻿﻿﻿﻿<img class="icons" src="images/purchasing.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Purchasing" /><span class="legend-text">﻿﻿Purchasing﻿</span></legend>
+				<legend><img class="icons" src="images/purchasing.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Purchasing" /><span class="legend-text">Purchasing</span></legend>
 				<ul>
-					﻿
 					<li>Purchase orders and suppliers can be in any currency.</li>
-					<li>﻿﻿Supplier item descriptions and pricing (in the currency of the supplier) for purchased items can be maintained.</li>
+					<li>Supplier item descriptions and pricing (in the currency of the supplier) for purchased items can be maintained.</li>
 					<li>Purchase orders automatically use these prices.</li>
 					<li>The same item can be purchased from many different suppliers.</li>
-					<li>﻿﻿Quantities on order show on inventory status inquiries by inventory location to receive into.</li>
+					<li>Quantities on order show on inventory status inquiries by inventory location to receive into.</li>
 					<li>Quantities on order also show on planning reports.</li>
-					<li>﻿﻿Goods received can be entered up to the purchase order quantity plus a user definable percentage allowance for over delivery.﻿</li>
-					<li>﻿Goods received are sequenced as a GRN and a record is retained for every stock movement referenced to the GRN.</li>
-					<li>﻿﻿Purchase orders record the quantity received and the quantity invoiced as well as the original quantity ordered.</li>
-					<li>﻿﻿Purchase orders can be emailed to one of the defined supplier contacts email addresses.</li>
-					<li>﻿﻿Inventory planning report can be produced based on a 3 or 4 month lead time showing suggested quantities to purchase based on the maximum of the prior 5 months usage.</li>
-					<li>﻿﻿Purchase orders can be entered for nominal items i.e. non-stock items with a general ledger code to be entered to specify how the general ledger integration postings should be made.</li>
-					<li>﻿﻿Purchase order approval levels and authorities can be defined.</li>
-					<li>With all approvals required by an authoriser easily ac﻿cessible for authorisation﻿﻿</li>
-					<li>﻿﻿Shipment costing can be set up across several purchase orders from the same supplier choosing only those lines that have been dispatched together.</li>
+					<li>Goods received can be entered up to the purchase order quantity plus a user definable percentage allowance for over delivery.</li>
+					<li>Goods received are sequenced as a GRN and a record is retained for every stock movement referenced to the GRN.</li>
+					<li>Purchase orders record the quantity received and the quantity invoiced as well as the original quantity ordered.</li>
+					<li>Purchase orders can be emailed to one of the defined supplier contacts email addresses.</li>
+					<li>Inventory planning report can be produced based on a 3 or 4 month lead time showing suggested quantities to purchase based on the maximum of the prior 5 months usage.</li>
+					<li>Purchase orders can be entered for nominal items i.e. non-stock items with a general ledger code to be entered to specify how the general ledger integration postings should be made.</li>
+					<li>Purchase order approval levels and authorities can be defined.</li>
+					<li>With all approvals required by an authoriser easily accessible for authorisation</li>
+					<li>Shipment costing can be set up across several purchase orders from the same supplier choosing only those lines that have been dispatched together.</li>
 					<li>Costs entered against these lines and against the shipment (from AP) are apportioned across all lines.</li>
 					<li>Shipment costing allows for automatic updating of standard or weighted average costs on closing shipments.</li>
-					<li>﻿﻿Supplier units and purchasing prices can be maintained with a preferred supplier for each item.</li>
+					<li>Supplier units and purchasing prices can be maintained with a preferred supplier for each item.</li>
 					<li>Orders can be entered referring to the supplier's item code and description and in the suppliers unit, converting to the business units for all internal purposes.</li>
 				</ul>
 			</fieldset>
 			<fieldset class="feature">
-				<legend>﻿﻿﻿﻿﻿<img class="icons" src="images/ap.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Accounts Payable" /><span class="legend-text">﻿﻿Accounts Payable﻿﻿</span></legend>
+				<legend><img class="icons" src="images/ap.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Accounts Payable" /><span class="legend-text">Accounts Payable</span></legend>
 				<ul>
-					<li>﻿﻿Suppliers can be defined in any currency.</li>
-					<li>﻿﻿Invoices can be entered against goods received with a user definable allowance for over invoicing.</li>
+					<li>Suppliers can be defined in any currency.</li>
+					<li>Invoices can be entered against goods received with a user definable allowance for over invoicing.</li>
 					<li>Thus ensuring payment is only made for goods received.</li>
-					<li>﻿﻿Invoices can be entered as a cost of a shipment for apportionment between the items on the shipment.</li>
-					<li>﻿﻿An aged listing of balances is available as a pdf showing either summary balances or the detail invoice by invoice of the balance of the account.</li>
-					<li>﻿﻿Retrospective allocation or de-allocation of payments to invoices. With differences on exchange reported.﻿﻿</li>
-					<li>﻿﻿Supplier invoices cannot be entered with the same reference as prior invoices.</li>
-					<li>﻿﻿Supplier invoices/credits can be entered against the internal record of goods received from the supplier.</li>
+					<li>Invoices can be entered as a cost of a shipment for apportionment between the items on the shipment.</li>
+					<li>An aged listing of balances is available as a pdf showing either summary balances or the detail invoice by invoice of the balance of the account.</li>
+					<li>Retrospective allocation or de-allocation of payments to invoices. With differences on exchange reported.</li>
+					<li>Supplier invoices cannot be entered with the same reference as prior invoices.</li>
+					<li>Supplier invoices/credits can be entered against the internal record of goods received from the supplier.</li>
 					<li>Providing an internal check to ensure only those goods received are paid for.</li>
-					<li>﻿﻿Supplier invoices for freight/duty etc can be charged against shipments from other suppliers.</li>
-					<li>﻿﻿Supplier invoices can be entered directly against multiple general ledger codings.</li>
-					<li>﻿﻿Inquiry on Suppliers account shows all transactions.</li>
-					<li>﻿﻿Fully integrated general ledger postings keeps the creditors control account in line with the supplier balances in local currency.</li>
-					<li>﻿﻿Payment run creates payment transactions based on payment of all due invoices not flagged as held.</li>
-					<li>﻿﻿A petty cash expense reimbursement module is available for sales people to enter their claims.﻿﻿</li>
+					<li>Supplier invoices for freight/duty etc can be charged against shipments from other suppliers.</li>
+					<li>Supplier invoices can be entered directly against multiple general ledger codings.</li>
+					<li>Inquiry on Suppliers account shows all transactions.</li>
+					<li>Fully integrated general ledger postings keeps the creditors control account in line with the supplier balances in local currency.</li>
+					<li>Payment run creates payment transactions based on payment of all due invoices not flagged as held.</li>
+					<li>A petty cash expense reimbursement module is available for sales people to enter their claims.</li>
 				</ul>
 			</fieldset>
 			<fieldset class="feature">
-				<legend><img class="icons" src="images/bank.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Bank" /><span class="legend-text">﻿﻿Bank﻿</span></legend>
+				<legend><img class="icons" src="images/bank.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Bank" /><span class="legend-text">Bank</span></legend>
 				<ul>
-					<li>﻿﻿As many bank accounts as required can be set up details and account number can be held against the bank account definition.</li>
-					<li>﻿﻿Bank accounts can be any currency and payments/receipts can be paid in any currency from any bank account.</li>
-					<li>﻿﻿Transfers between accounts are automatically detected by entry of payment to another bank account or receipt.</li>
-					<li>﻿﻿Bank transaction matching to bank statements show outstanding payments/receipts only or all depending on selections.</li>
-					<li>﻿﻿Online reconciliation statement based on matched and all entered transactions.﻿﻿</li>
-					<li>﻿Calculation and posting to GL of unrealised exchange differences in foreign currency bank account balances</li>
-					﻿
+					<li>As many bank accounts as required can be set up details and account number can be held against the bank account definition.</li>
+					<li>Bank accounts can be any currency and payments/receipts can be paid in any currency from any bank account.</li>
+					<li>Transfers between accounts are automatically detected by entry of payment to another bank account or receipt.</li>
+					<li>Bank transaction matching to bank statements show outstanding payments/receipts only or all depending on selections.</li>
+					<li>Online reconciliation statement based on matched and all entered transactions.</li>
+					<li>Calculation and posting to GL of unrealised exchange differences in foreign currency bank account balances</li>
 				</ul>
 			</fieldset>
 			<fieldset class="feature">
-				<legend>﻿﻿<img class="icons" src="images/gl.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="General Ledger" /><span class="legend-text">General Ledger﻿</span></legend>
+				<legend><img class="icons" src="images/gl.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="General Ledger" /><span class="legend-text">General Ledger</span></legend>
 				<ul>
-					<li>﻿﻿Automatically maintained periods, reporting over any range of periods with no rollover procedure at period end.</li>
-					<li>﻿﻿Balance Sheet and Profit and Loss Statements﻿﻿ ﻿﻿Reporting against budget﻿﻿ ﻿﻿Inquiry on any account over any period.</li>
-					<li>﻿﻿Posting journals into any number of periods ahead or periods before.</li>
-					<li>﻿﻿Reversing journals.﻿﻿</li>
+					<li>Automatically maintained periods, reporting over any range of periods with no rollover procedure at period end.</li>
+					<li>Balance Sheet and Profit and Loss Statements Reporting against budget Inquiry on any account over any period.</li>
+					<li>Posting journals into any number of periods ahead or periods before.</li>
+					<li>Reversing journals.</li>
 					<li>Automatic posting no separate process to run to post general ledger transactions.</li>
-					<li>﻿﻿Extensive narrative on journals created by sub-ledgers (AP/AR).</li>
-					<li>﻿﻿Accounts can be grouped using relational methods ie flagged as a member of user definable account groups - rather than the old chart of accounts numbering structure.</li>
-					<li>﻿﻿Account groups can be nested so hierarchical structures can be accommodated - detailed profit and loss, balance sheet and trial balance all use account group structures to display reports.</li>
-					<li>﻿﻿Posting to prior periods can be disabled based on transaction date to prevent prior periods being changed.﻿</li>
+					<li>Extensive narrative on journals created by sub-ledgers (AP/AR).</li>
+					<li>Accounts can be grouped using relational methods ie flagged as a member of user definable account groups - rather than the old chart of accounts numbering structure.</li>
+					<li>Account groups can be nested so hierarchical structures can be accommodated - detailed profit and loss, balance sheet and trial balance all use account group structures to display reports.</li>
+					<li>Posting to prior periods can be disabled based on transaction date to prevent prior periods being changed.</li>
 				</ul>
 			</fieldset>
 			<fieldset class="feature">
-				<legend><img class="icons" src="images/manufacturing.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Manufacturing" /><span class="legend-text">﻿﻿Manufacturing﻿</span></legend>
+				<legend><img class="icons" src="images/manufacturing.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Manufacturing" /><span class="legend-text">Manufacturing</span></legend>
 				<ul>
-					<li>﻿﻿Multi-level bill of materials - with error trapping to prevent recursive BOMs.</li>
-					<li>﻿﻿Phantom bills - automatically explode into components when a parent work order is created.</li>
-					<li>﻿﻿Automatic cost rolls ups on change of BOM or component costs.</li>
-					<li>﻿﻿Works orders can have multiple output items for handling by-products.</li>
-					<li>﻿﻿Optional automatic backflushing or auto-issue of components.</li>
-					<li>﻿﻿Issues to works orders and receipts of finished goods from work orders integrated to inventory and GL.﻿</li>
-					<li>﻿Issue of labour and time or other services to works order.﻿﻿</li>
+					<li>Multi-level bill of materials - with error trapping to prevent recursive BOMs.</li>
+					<li>Phantom bills - automatically explode into components when a parent work order is created.</li>
+					<li>Automatic cost rolls ups on change of BOM or component costs.</li>
+					<li>Works orders can have multiple output items for handling by-products.</li>
+					<li>Optional automatic backflushing or auto-issue of components.</li>
+					<li>Issues to works orders and receipts of finished goods from work orders integrated to inventory and GL.</li>
+					<li>Issue of labour and time or other services to works order.</li>
 					<li>Work order costing - automatic weighted average cost updates (or manual standard costing updates).</li>
-					<li>﻿﻿Usage variances reported to GL - inventory category record determines GL accounts.</li>
-					<li>﻿﻿Demand for components of work orders shows in stock status inquiries.</li>
-					<li>﻿﻿Full MRP - Material Requirements Planning with master production schedule/forecast maintenance and creation facilities.</li>
+					<li>Usage variances reported to GL - inventory category record determines GL accounts.</li>
+					<li>Demand for components of work orders shows in stock status inquiries.</li>
+					<li>Full MRP - Material Requirements Planning with master production schedule/forecast maintenance and creation facilities.</li>
 					<li>Fast full recursive calculation of MRP - (note that capacity requirements planning and MRP II functionality is NOT currently available in webERP).</li>
 				</ul>
 			</fieldset>
 			<fieldset class="feature">
-				<legend><img class="icons" src="images/contract.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Contract Costing" /><span class="legend-text">﻿Contract Costing﻿</span></legend>
+				<legend><img class="icons" src="images/contract.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Contract Costing" /><span class="legend-text">Contract Costing</span></legend>
 				<ul>
 					<li>Job costings can be created for a selected customer using stock and other requirements.</li>
 					<li>These can be converted into a quotation and if the quotation is accepted a sales order/work order.</li>
-					<li>﻿﻿Issuing stock to the job is handled like any other work order until the contract/job is invoiced</li>
-					<li>﻿﻿Full report on contract/job variances from quoted costs</li>
+					<li>Issuing stock to the job is handled like any other work order until the contract/job is invoiced</li>
+					<li>Full report on contract/job variances from quoted costs</li>
 				</ul>
 			</fieldset>
 			<fieldset class="feature">
-				<legend>﻿﻿<img class="icons" src="images/asset.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Fixed Assets" /><span class="legend-text">﻿Fixed Assets</span>﻿﻿</legend>
+				<legend><img class="icons" src="images/asset.avif" title="Icon downloaded from here - https://www.flaticon.com/free-icons/download" alt="Fixed Assets" /><span class="legend-text">Fixed Assets</span></legend>
 				<ul>
-					<li>﻿﻿Asset additions through purchase orders or supplier invoice entry directly.</li>
-					<li>﻿﻿Disposals of fixed assets through normal sales order entry - asset to be disposed can be selected for sale.</li>
-					<li>﻿﻿Fixed Asset register covers a period showing additions, depreciation and disposals for that period.﻿</li>
-					<li>﻿﻿Integrated GL entries created based on asset category GL codes if creditors and debtors are linked to GL.</li>
+					<li>Asset additions through purchase orders or supplier invoice entry directly.</li>
+					<li>Disposals of fixed assets through normal sales order entry - asset to be disposed can be selected for sale.</li>
+					<li>Fixed Asset register covers a period showing additions, depreciation and disposals for that period.</li>
+					<li>Integrated GL entries created based on asset category GL codes if creditors and debtors are linked to GL.</li>
 				</ul>
 			</fieldset>
 		</section>
