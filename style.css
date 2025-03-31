@@ -205,10 +205,12 @@ border-radius:5px;
 .icons{
 width:48px;
 height:48px;
+margin-right:5px;
 }
 .title{
 padding-left:8px;
 font-size:2rem;
+margin-bottom:15px
 }
 .ItemLink{
 text-decoration:none;
