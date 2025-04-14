@@ -339,6 +339,9 @@ color:var(--text_colour);
 .manual-container > .manual-index > .manual-index-item > a:hover{
 text-decoration:none;
 background:var(--logo_main_colour2);
+color:var(--main-background);
+padding-top:0px;
+padding-bottom:0px;
 }
 .manual-container > .manual-page {
 background-color:var(--header_background);
