@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta name="generator" content="Hugo 0.134.3">
-		<meta charset='utf-8'>
+        <title>webERP - Development</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="generator" content="LibreOffice 25.2.3.2 (Windows)"/>
+        <meta name="changed" content="2025-06-03T10:46:12.725608900"/>
+        <meta name="description" content="webERP Coding Standard"/>
+        <meta name="" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
 		<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta data-react-helmet="true" name="description" content="webERP is a practical web based open source ERP system"/>
-		<title>webERP - Development</title>
+
 		<link rel="canonical" href="https://weberp.org/CodingStandards.html" />
 		<link href="favicon.ico" rel='shortcut icon' type='image/x-icon'>
 		<link rel="stylesheet" href="style.css">
@@ -65,146 +71,293 @@
 		</header>
 		<fieldset>
 			<legend id="PageTitle" style="font-size:200%">Coding Conventions/Style</legend>
-			<div id="PageDetail">
-				<p>It is a core goal of webERP to be easy to read for business people and newcomers to PHP. This requires some compromises, but mostly much of these standards represent good programming practice and the adoption of conventions which make the code consistently easy to read throughout.</p>
-				<p>As this is a core goal of webERP consistency of style and the adherence to these conventions is regarded as critically important for all new code.</p>
-				<p>All code in webERP must conform to these standards.</p>
-				<h2>Function/Class/Variable/Field Naming</h2>
-				<p>Descriptive names should be used in preference to short variable names:
-					eg.
-				</p>
-				<p id="code">$a = 3.14159;</p>
-				should be avoided in favour of:
-				<p id="code">$Pi = 3.14159;</p>
-				<p>The variables $i $j and $k can be used as a counters.</p>
-				As displayed above, there should be one space on either side of an equals sign used to assign the return value of a function to a variable. In the case of a block of related assignments, more space may be inserted to promote readability:
-				<p id="code">$Short = foo($bar);<br />
-					$LongVariable = foo($baz);
-				</p>
-				Good descriptive variable names consisting of several words appended together should have the first letter of each word capitalised. eg.
-				<p id="code">$longvariablename = 1;</p>
-				should be written as:
-				<p id="code">$LongVariableName = 1;</p>
-				<h2>HTML</h2>
-				<p>HTML keywords and tags should be in lower case to improve xhtml compatibility.</p>
-				<p>HTML table cell tags in echo statements should use carriage returns to keep cells together so it is easy to see what is in each cell.
-					eg.
-				</p>
-				<p id="code">
-					echo '&lt;table&gt; &lt;tr&gt; &lt;td&gt;' . _('Label text') . ':&lt;/td&gt; &lt;td&gt;' . $SomeVariable . '&lt;/td&gt; &lt;td&gt;' . _('Some Other Label') . ':&lt;/td&gt; &lt;td align="right"&gt;' . number_format($SomeNumber,2) . '&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; ';
-				</p>
-				<p>Would be more easily digested and should be written as</p>
-				<p id="code">
-					echo '&lt;table&gt;<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;' . _('Label text') . ':&lt;/td&gt;<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;' . $SomeVariable . '&lt;/td&gt;<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;' . _('Some Other Label') . '&lt;/td&gt;<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td align="right"&gt;' . number_format($SomeNumber,2) . '&lt;/td&gt;<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;';<br />
-				</p>
-				<p>Carriage returns and indentation should be used in a similar way for printf statements.</p>
-				<p>All values of xhtml properties should be between double quotes e.g.</p>
-				<p id="code">&lt;input type="text" name="InputBox" value="Default" /&gt;</p>
-				<p>This goes hand in hand with using single quotes for all echo statements see below.</p>
-				<h2>Label Strings and Multi-Language</h2>
-				<p>Since webERP is a multi-language system it is important not to compromise this capability by having labels in your scripts that are not enclosed in the gettext function eg.</p>
-				<p id="code">echo 'Enter the quantity:&lt;input type="text" name="Quantity" /&gt;';</p>
-				<p>should be written as:</p>
-				<p id="code">echo _('Enter the quantity') . ':&lt;input type="text" name="Quantity" /&gt;';</p>
-				<p>note that there should be no trailing spaces on the string to be translated inside the _() function call</p>
-				<h2>PHP Variables</h2>
-				<p>The PHP variable arrays $_POST, $_GET, $_SERVER, $_SESSION provide context about where a variable comes from - many developers are tempted to abbreviate:</p>
-				<p id="code">$StartingCustomer = $_POST['StartingCustomer'];</p>
-				or worse:
-				<p id="code">$s = $_POST['StartingCustomer'];</p>
-				<p>This should be avoided in favour of using:
-				<p id="code">$_POST['StartingCustomer']</p>
-				everywhere it is required so the reader can see where the variable comes from.</p>
-				<p>However, variables which could come from either a $_GET or a $_POST and/or a $_SESSION may be assigned as in the first example since there is no value in the context.</p>
-				<h2>PHP Functions and Keywords</h2>
-				<p>All PHP keywords must be in lower case</p>
-				<h2>Quotation Marks</h2>
-				<p>Notice that single quotes (') are used in preference to double quotes (") - there is additional overhead for php in parsing data within double quotes. They should only be used where absolutely necessary and concatenation of variables is preferred to having variables inside double quotes.
-					eg.
-				</p>
-				<p id="code">echo "Some text with a $Variable";</p>
-				would be better written as:
-				<p id="code">echo _('Some text with a') . ' ' . $Variable;</p>
-				<p>to reduce the parsing job required of the web-server. Notice all strings need to be inside the gettext _() function.</p>
-				<p>Arrays and super global arrays should always have the element name within single quotes not doubles
-					eg.
-				</p>
-				<p id="code">$_POST["FormVariableName"]</p>
-				should be written as:
-				<p id="code">$_POST['FormVariableName']</p>
-				<p>The only exception to this is that when constructing SQL statements, due to the requirement to single quote string literals in SQL statements, the entire SQL string should always be written using double quotes. (See below)</p>
-				<h2>Control Structures</h2>
-				<p>Where there are many comparisons new lines should be created for each comparison</p>
-				<p id="code">if ($OneTwoThree==$_POST['OneTwoThree']<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;and $MyRow['onetwothree']==$_SESSION['OneTwoThree']) {
-				</p>
-				<p>All control structures (these include if, for, while, switch) must always use "1 True Brace" style statement blocks.</p>
-				<p>You are strongly encouraged to always use curly braces even in situations where they are technically optional. Having them increases readability and decreases the likelihood of logic errors being introduced when new lines are added.
-					eg.
-				</p>
-				<p id="code">if ($VariableName == true) echo _('Variable was true');</p>
-				Whilst legal PHP syntax, this should be avoided in favour of the following syntax:
-				<p id="code">if ($VariableName == true) {<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;echo _('Variable was true'); <br />
-					}
-				</p>
-				<p>Parenthesis should open on the same line (after a space) as the initiating control structure and close the statement block at the same level of indenting as the initiating line.</p>
-				<p>Else statements should be on the same line as the closing statement block from the preceding elseif or if statement eg.</p>
-				<p id="code">
-					if ($VariableName == true) {<br/>
-					&nbsp;&nbsp;&nbsp;&nbsp;echo 'Variable was true'; <br />
-					} else { <br />
-					&nbsp;&nbsp;&nbsp;&nbsp;echo 'Variable was false'; <br />
-					} /*end else $VariableName was false*/
-				</p>
-				<p>This is the only time there should be anything other than a comment on the closing curly brace line. Comments on a closing curly brace line where the block has been quite a few lines of code are encouraged to show the control structure to which they related.</p>
-				<p>Whenever a statement block is used code within the block should be one tab indented. Indenting code correctly is critical to avoid logic errors and to improve readability.</p>
-				<p>Function definitions should follow the same conventions.</p>
-				<p>Most programming editors have word wrap and this is preferred to manual line breaks.</p>
-				<h2>Spacing</h2>
-				<p>Where readability is improved lines of code should be separated by a line</p>
-				<h2>Comments</h2>
-				<p>The code will tend to be self commenting with the aid of long variable names and the addition of the context of variables. However, explanations should be provided wherever possible using C style comment blocks in the format:</p>
-				<p id="code">/* comments in here */</p>
-				<p>The standard message function prnMsg should always be used for all messages to be echo'ed to the screen - this function has two parameters - the string to display and the message type , 'error', 'warn', 'success', 'info' - there is a third optional parameter which is a prefix heading for the message.</p>
-				</p>There should never be any database specific calls in scripts other than includes/ConnectDB_XXXX.inc where XXXX is the abbreviation for the RDBMS the abstraction code refers to.</p>
-				<p>All database calls should be performed by calling the abstraction functions in those scripts. (currently only includes/ConnectDB_mysql.inc exists ConnectDB_postgres.inc was depreciated but could easily be revived if we stick with this convention</p>
-				<h2>SQL</h2>
-				<p> The SQL should be ANSI compliant. Using SQL which is particular to a specific RDBMS is to be avoided in favour of the ANSI equivalent.</p>
-				<p>The webERP goal of providing "low footprint" efficient system - requires careful thought. The number of "round trips" must be minimised - never go off to the database to get data that could have been got in a prior query. This is inefficient design and to be avoided.</p>
-				<p>Table and field names should always use lower case and should be descriptive of the data they hold. e.g. Field names such as "nw" should be avoided in favour of "netweight"</p>
-				<p>SQL statements should be on several lines for easier reading eg.</p>
-				<p id="code">$SQL = "select transno, trandate, debtortrans.debtorno, branchcode, reference, invtext, order_, rate, ovamount+ovgst+ovfreight+ovdiscount as totalamt, currcode from debtortrans inner join debtorsmaster on debtortrans.debtorno=debtorsmaster.debtorno";</p>
-				is harder to read than:
-				<p id="code">$SQL = "SELECT transno,<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trandate,<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debtortrans.debtorno,<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;branchcode, reference,<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;invtext,<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;order_,<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rate,<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ovamount+ovgst+ovfreight+ovdiscount AS totalamt,<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currcode <br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FROM debtortrans<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INNER JOIN debtorsmaster<br />
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ON debtortrans.debtorno=debtorsmaster.debtorno";
-				</p>
-				<p>SQL keywords should be capitalised as above eg. SELECT, CASE, FROM, WHERE, GROUP BY, ORDER BY, AS, INNER JOIN etc.</p>
-				<p>Line breaks after every comma and on major SQL reserved words as above.</p>
-				<p>Quoting SQL variables - variables incorporated into SQL strings need to be inside SINGLE quotes so that the variable cannot be used by a hacker to send spurious SQL to retrieve private data.</p>
-				<p>NOTE: Since variables incorporated into an SQL string need to be quoted with single quotes inside the SQL string, the SQL strings themselves need to be quoted inside double quotes.</p>
-				<p>This is the one exception to the general rule to always use single quotes for strings (which makes the parsing job for PHP easier and quicker).</p>
-				<h2>Constants</h2>
-				<p>Constants should always be upper-case, with underscores to separate words. Where it is possible to use a literal instead of a constant then the literal is preferred.</p>
-				<h2>PHP Code Tags</h2>
-				<p>Always use &lt;?php ?&gt; to delimit PHP code, not the &lt;? ?&gt; shorthand. This is the most portable way to include PHP code on differing operating systems and setups.</p>
+            <div id="PageDetail" dir="ltr"><p>It is a core goal of webERP to be
+            	easy to read for business people and newcomers to PHP. Much of these
+            	standards simply represent good programming practice and the
+            	conventions make the code consistently easy to read throughout (although
+            	arguably may increase verboseness).</p>
+            	<p>As this is a core goal of webERP consistency of style and the
+            	adherence to these conventions is regarded as critically important
+            	for all new code.</p>
+            	<p>All code in webERP must conform to these standards.</p>
+            	<h2>PHP</h2>
+            	<p>Defer to simpler over better (simpler _is_ better!) and logical,
+            	explainable and supportable over easiest or quickest at that moment
+            	for the developer.</p>
+            	<h3>Code Tags</h3>
+            	<p>Always use &lt;?php ?&gt; to delimit PHP code (not the &lt;? ?&gt;
+            	shorthand). Is the most portable way to include PHP code on
+            	differing operating systems and setups.</p>
+            	<h3>Functions and Keywords</h3>
+            	<p>All PHP keywords must be in lower case.</p>
+            	<h3>Constants</h3>
+            	<p>Constants should always be UPPER_CASE using underscores to
+            	separate words. Where it is possible to use a literal instead of a
+            	constant, a literal is preferred.</p>
+            	<h3>Spacing</h3>
+            	<p>Lines of code should be separated by a blank line if readability
+                is improved (separating groups of lines, or separate a line from the
+                preceding or following lines).</p>
+            	<h3>Comments</h3>
+            	<p>Comments are bread crumbs you are leaving for future you and
+            	other developer that explain the basics of the script, what is the
+            	goal of the script and how it is achieved, and to explain in more
+            	detail when the script is complex.</p>
+            	<p>Comments need to be kept current. Whenever you touch a script,
+            	check for obsolete comments to update, clarify or delete - as you
+            	see fit considering the needs of the community. Long scripts that
+            	contain several functions will benefit from an overview and list of
+            	functions with descriptions, even referencing related scripts. The
+            	goal is to help the future you and other developers to grok a script
+            	and its role in webERP as quickly as possible (arguably at the
+            	expense of writing and maintaining comments). 
+            	</p>
+            	<p>The code will tend to be self commenting with the aid of long
+            	variable names and the addition of the context of variables.</p>
+            	<p>Explanations should be provided wherever possible using C style
+            	comment blocks in the format:</p>
+            	<p class="code"><a name="code Copy 21"></a>/* quick guide to next
+            	line or couple lines */</p>
+            	<p>or</p>
+            	<p class="code"><a name="code Copy 21 Copy 1"></a>/*</p>
+            	<p class="code">* multiple line comment</p>
+            	<p class="code">* giving an overview or</p>
+            	<p class="code">* explaining a concept</p>
+            	<p class="code">*/</p>
+            	<h3>Communicating to the User</h3>
+            	<p>The standard message function prnMsg should always be used for
+            	all messages to be echo'ed to the screen - this function has two
+            	parameters - the string to display and the message type , 'error',
+            	'warn', 'success', 'info' - there is a third optional parameter
+            	which is a prefix heading for the message.</p>
+            	<h3>Function/Class/Variable/Field Naming</h3>
+            	<p>Long, self-explanatory variable names help a lot to decipher
+            	what's contained in that variable. Descriptive names (using
+            	PascalCase) are preferred over short variable names: e.g. 
+            	</p>
+            	<p><a name="code"></a>$a = 3.14159;</p>
+            	<p>should be avoided in favour of: 
+            	</p>
+            	<p><a name="code Copy 1"></a>$Pi = 3.14159;</p>
+            	<p>The variables $i $j and $k can be used as a counters.</p>
+            	<p>As displayed above, there should be one space on either side of
+            	an equals sign used to assign the return value of a function to a
+            	variable. In the case of a block of related assignments, more space
+            	may be inserted to promote readability: 
+            	</p>
+            	<p><a name="code Copy 2"></a>$Short = foo($bar);<br/>
+            $LongVariable
+            	= foo($baz); 
+            	</p>
+            	<p>Good descriptive variable names consisting of several words
+            	appended together should have the first letter of each word
+            	capitalised. eg. 
+            	</p>
+            	<p><a name="code Copy 3"></a>$longvariablename = 1;</p>
+            	<p>should be written as: 
+            	</p>
+            	<p><a name="code Copy 4"></a>$LongVariableName = 1;</p>
+            	<h3>Label Strings and Multi-Language</h3>
+            	<p>Since webERP is a multi-language system it is important not to
+            	compromise this capability by having labels in your scripts that are
+            	not enclosed in the gettext function eg.</p>
+            	<p><a name="code Copy 8"></a>echo 'Enter the quantity:&lt;input
+            	type=&quot;text&quot; name=&quot;Quantity&quot; /&gt;';</p>
+            	<p>should be written as:</p>
+            	<p><a name="code Copy 9"></a>echo _('Enter the quantity') . ':&lt;input
+            	type=&quot;text&quot; name=&quot;Quantity&quot; /&gt;';</p>
+            	<p>note that there should be no trailing spaces on the string to be
+            	translated inside the _() function call</p>
+            	<h3>Variable Arrays</h3>
+            	<p>The PHP variable arrays $_POST, $_GET, $_SERVER, $_SESSION
+            	provide context about where a variable comes from - many developers
+            	are tempted to abbreviate:</p>
+            	<p><a name="code Copy 10"></a>$StartingCustomer =
+            	$_POST['StartingCustomer'];</p>
+            	<p>or worse: 
+            	</p>
+            	<p><a name="code Copy 11"></a>$s = $_POST['StartingCustomer'];</p>
+            	<p>This should be avoided in favour of using: 
+            	</p>
+            	<p><a name="code Copy 12"></a>$_POST['StartingCustomer']</p>
+            	<p>everywhere it is required so the reader can see where the
+            	variable comes from.</p>
+            	<p>However, variables which could come from either a $_GET or a
+            	$_POST and/or a $_SESSION may be assigned as in the first example
+            	since there is no value in the context.</p>
+            	<h3>Quotation Marks</h3>
+            	<p>Notice that single quotes (') are used in preference to double
+            	quotes (&quot;) - there is additional overhead for php in parsing
+            	data within double quotes. They should only be used where absolutely
+            	necessary and concatenation of variables is preferred to having
+            	variables inside double quotes. eg. 
+            	</p>
+            	<p><a name="code Copy 13"></a>echo &quot;Some text with a
+            	$Variable&quot;;</p>
+            	<p>would be better written as: 
+            	</p>
+            	<p><a name="code Copy 14"></a>echo _('Some text with a') . ' ' .
+            	$Variable;</p>
+            	<p>to reduce the parsing job required of the web-server. Notice all
+            	strings need to be inside the gettext _() function.</p>
+            	<p>Arrays and super global arrays should always have the element
+            	name within single quotes not doubles eg. 
+            	</p>
+            	<p><a name="code Copy 15"></a>$_POST[&quot;FormVariableName&quot;]</p>
+            	<p>should be written as: 
+            	</p>
+            	<p><a name="code Copy 16"></a>$_POST['FormVariableName']</p>
+            	<p>The only exception to this is that when constructing SQL
+            	statements, due to the requirement to single quote string literals
+            	in SQL statements, the entire SQL string should always be written
+            	using double quotes. (See below)</p>
+            	<h3>Control Structures</h3>
+            	<p>Where there are many comparisons new lines should be created for
+            	each comparison</p>
+            	<p><a name="code Copy 17"></a>if
+            	($OneTwoThree==$_POST['OneTwoThree']<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;and
+            	$MyRow['onetwothree']==$_SESSION['OneTwoThree']) { 
+            	</p>
+            	<p>All control structures (these include if, for, while, switch)
+            	must always use &quot;1 True Brace&quot; style statement blocks.</p>
+            	<p>You are strongly encouraged to always use curly braces even in
+            	situations where they are technically optional. Having them
+            	increases readability and decreases the likelihood of logic errors
+            	being introduced when new lines are added. eg. 
+            	</p>
+            	<p><a name="code Copy 18"></a>if ($VariableName == true) echo
+            	_('Variable was true');</p>
+            	<p>Whilst legal PHP syntax, this should be avoided in favour of the
+            	following syntax: 
+            	</p>
+            	<p><a name="code Copy 19"></a>if ($VariableName == true) {<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;echo
+            	_('Variable was true'); <br/>
+            } 
+            	</p>
+            	<p>Parenthesis should open on the same line (after a space) as the
+            	initiating control structure and close the statement block at the
+            	same level of indenting as the initiating line.</p>
+            	<p>Else statements should be on the same line as the closing
+            	statement block from the preceding elseif or if statement eg.</p>
+            	<p><a name="code Copy 20"></a>if ($VariableName == true) {<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;echo
+            	'Variable was true'; <br/>
+            } else { <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;echo
+            	'Variable was false'; <br/>
+            } /*end else $VariableName was false*/ 
+            	</p>
+            	<p>This is the only time there should be anything other than a
+            	comment on the closing curly brace line. Comments on a closing curly
+            	brace line where the block has been quite a few lines of code are
+            	encouraged to show the control structure to which they related.</p>
+            	<p>Whenever a statement block is used code within the block should
+            	be one tab indented. Indenting code correctly is critical to avoid
+            	logic errors and to improve readability.</p>
+            	<p>Function definitions should follow the same conventions.</p>
+            	<p>Most programming editors have word wrap and this is preferred to
+            	manual line breaks.</p>
+            	<h3>Repeated Code</h3>
+            	<p>In general shorter scripts are easier to understand but too much
+            	abstraction can make a path hard to follow. The the best solution
+            	will depend on the context.</p>
+            	<h2>HTML</h2>
+            	<p>HTML keywords and tags should be in lower case to improve xhtml
+            	compatibility.</p>
+            	<p>HTML table cell tags in echo statements should use carriage
+            	returns to keep cells together so it is easy to see what is in each
+            	cell. eg. 
+            	</p>
+            	<p><a name="code Copy 5"></a>echo '&lt;table&gt; &lt;tr&gt; &lt;td&gt;'
+            	. _('Label text') . ':&lt;/td&gt; &lt;td&gt;' . $SomeVariable .
+            	'&lt;/td&gt; &lt;td&gt;' . _('Some Other Label') . ':&lt;/td&gt; &lt;td
+            	align=&quot;right&quot;&gt;' . number_format($SomeNumber,2) . '&lt;/td&gt;
+            	&lt;/tr&gt; &lt;/table&gt; '; 
+            	</p>
+            	<p>Would be more easily digested and should be written as</p>
+            	<p><a name="code Copy 6"></a>echo
+            	'&lt;table&gt;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;'
+            	. _('Label text') . ':&lt;/td&gt;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;'
+            	. $SomeVariable . '&lt;/td&gt;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;'
+            	. _('Some Other Label') . '&lt;/td&gt;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td
+            	align=&quot;right&quot;&gt;' . number_format($SomeNumber,2) .
+            	'&lt;/td&gt;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;';</p>
+            	<p>Carriage returns and indentation should be used in a similar way
+            	for printf statements.</p>
+            	<p>All values of xhtml properties should be between double quotes
+            	e.g.</p>
+            	<p><a name="code Copy 7"></a>&lt;input type=&quot;text&quot;
+            	name=&quot;InputBox&quot; value=&quot;Default&quot; /&gt;</p>
+            	<p>This goes hand in hand with using single quotes for all echo
+            	statements see below.</p>
+            	<h2>SQL</h2>
+            	<p>The SQL should be ANSI compliant. Using SQL particular to a
+            	specific RDBMS is to be avoided in favour of the ANSI equivalent.</p>
+            	<p>The webERP goal of providing &quot;low footprint&quot; efficient
+            	system - requires careful thought. The number of &quot;round trips&quot;
+            	must be minimised - never go off to the database to get data that
+            	could have been got in a prior query. This is inefficient design and
+            	to be avoided.</p>
+            	<p>There should never be any database specific calls in scripts
+            	other than includes/ConnectDB_XXXX.inc where XXXX is the
+            	abbreviation for the RDBMS the abstraction code refers to.</p>
+            	<p>All database calls should be performed by calling the abstraction
+            	functions in those scripts. (currently only
+            	includes/ConnectDB_mysql.inc exists ConnectDB_postgres.inc was
+            	depreciated but could easily be revived if we stick with this
+            	convention</p>
+            	<p>Table and field names should always use lower case and should be
+            	descriptive of the data they hold. e.g. Field names such as &quot;nw&quot;
+            	should be avoided in favour of &quot;netweight&quot;</p>
+            	<p>SQL statements should be on several lines for easier reading eg.</p>
+            	<p><a name="code Copy 22"></a>$SQL = &quot;select transno, trandate,
+            	debtortrans.debtorno, branchcode, reference, invtext, order_, rate,
+            	ovamount+ovgst+ovfreight+ovdiscount as totalamt, currcode from
+            	debtortrans inner join debtorsmaster on
+            	debtortrans.debtorno=debtorsmaster.debtorno&quot;;</p>
+            	<p>is harder to read than: 
+            	</p>
+            	<p><a name="code Copy 23"></a>$SQL = &quot;SELECT
+            	transno,<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trandate,<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debtortrans.debtorno,<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;branchcode,
+            	reference,<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;invtext,<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;order_,<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rate,<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ovamount+ovgst+ovfreight+ovdiscount
+            	AS totalamt,<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currcode
+            	<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FROM
+            	debtortrans<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INNER
+            	JOIN debtorsmaster<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ON
+            	debtortrans.debtorno=debtorsmaster.debtorno&quot;; 
+            	</p>
+            	<p>SQL keywords should be capitalised as above eg. SELECT, CASE,
+            	FROM, WHERE, GROUP BY, ORDER BY, AS, INNER JOIN etc.</p>
+            	<p>Line breaks after every comma and on major SQL reserved words as
+            	above.</p>
+            	<p>Quoting SQL variables - variables incorporated into SQL strings
+            	need to be inside SINGLE quotes so that the variable cannot be used
+            	by a hacker to send spurious SQL to retrieve private data.</p>
+            	<p>NOTE: Since variables incorporated into an SQL string need to be
+            	quoted with single quotes inside the SQL string, the SQL strings
+            	themselves need to be quoted inside double quotes. This is the one
+            	exception to the general rule to always use single quotes for
+            	strings for easier quicker PHP parsing.</p>
 			</div>
 		</fieldset>
 			<footer>
