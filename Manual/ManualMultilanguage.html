@@ -10,7 +10,7 @@
 <p>If your language is not listed in the drop down box it is possible to create a new translation. The recommended procedure to create a translation is as follows:</p>
 
 <ol>
-    <li><a href="http://lists.sourceforge.net/lists/listinfo/web-erp-translation">Join the mailing list here</a><br>
+    <li><a href="https://lists.sourceforge.net/lists/listinfo/web-erp-translation">Join the mailing list here</a><br>
     Let the list know you're wanting to help with a translation - someone may already be working on it.</li>
 
     <li>Obtain the latest messages.po file and enter the translations using your favourite editor (or poedit). The latest messages.po file is included with the latest archive:<br />www_root/webERP/locale/en_GB/LC_MESSAGES/message.po<br />Edit the file provided entering the translations for the strings labelled msgid in the string labelled msgstr. Watch for html strings embedded inside the strings the html will also be required in the translated string. Also be sure to ensure that each translated string is enclosed in speech marks ("). Please also complete the translation file header information - with your details so that you are accorded proper recognition for your contribution.</li>
@@ -41,11 +41,11 @@
     <li><b>messages.mo</b>. This is a binary machine searchable translation file used by gettext. The .mo file is automatically produced by a gettext utility (msgfmt.exe or msgfmt in *nix) using the messages.po file (the syntax from a command window is msgfmt.exe messages.po). The main effort is required to get the .po file translated - the .mo file is easily and happily created by the webERP project admin if required.</li>
 </ol>
 
-<p>Any text editor can be used to edit the .po file (GNU Emacs contains specific functionality for editing .po files there is a special PO-Mode) - there is also a utility called <a href="http://poedit.net/" target="_blank">Poedit - Gettext Translations Editor</a> which is often recommended by translators.</p>
+<p>Any text editor can be used to edit the .po file (GNU Emacs contains specific functionality for editing .po files there is a special PO-Mode) - there is also a utility called <a href="https://poedit.net/" target="_blank">Poedit - Gettext Translations Editor</a> which is often recommended by translators.</p>
 
 <h3>Understanding the messages.po File</h3>
 
-<p>The translation is performed by translating the strings in the messages.po file into the other language. It is important to work on the most recent messages.po file from the locale/en_GB-utf8/LC_MESSAGES/ directory in the SVN. This can be downloaded from <a href="https://sourceforge.net/p/web-erp/code/HEAD/tree/trunk/locale/en_GB.utf8/LC_MESSAGES/messages.pot">the subversion repository</a></p>
+<p>The translation is performed by translating the strings in the messages.po file into the other language. It is important to work on the most recent messages.po file from the locale/en_GB-utf8/LC_MESSAGES/ directory in the Git source. This can be downloaded from <a href="https://raw.githubusercontent.com/timschofield/webERP/refs/heads/master/locale/en_GB.utf8/LC_MESSAGES/messages.pot">the Github repository</a></p>
 
 <p>The messages.po is made up of sections</p>
 
@@ -147,7 +147,7 @@ this line is the english string which is to be substituted by the text in msgstr
 
 <h4>Other Resources</h4>
 
-<p><a href="http://www.gnu.org/software/gettext/manual/html_chapter/gettext_toc.html#SEC_Contents">The GNU gettext manual</a></p>
+<p><a href="https://www.gnu.org/savannah-checkouts/gnu/gettext/manual/gettext.html#SEC_Contents">The GNU gettext manual</a></p>
 
 <div class="floatright">
     <a class="minitext" href="#top">⬆ Top</a>
@@ -159,7 +159,7 @@ this line is the english string which is to be substituted by the text in msgstr
 
 <p>The following explains how to use the language translation utilities provided with webERP for the purpose of adding languages and maintaining their translations.</p>
 
-<p>In general before using the utilities you need to click on your user name at the top left in order to access user preferences. Select the language to translate and click on Modify. The language utilities all use the currently selected user language. If the language you wish to use is not there then a new translation can be initiated with the 'Add a New Language' utility - see below. By default a new install of webERP will only have the english - en_GB available. The most recent submitted language packs are available from the <a href='http://sourceforge.net/project/showfiles.php?group_id=70949'>sourceforge webERP page</a></p>
+<p>In general before using the utilities you need to click on your user name at the top left in order to access user preferences. Select the language to translate and click on Modify. The language utilities all use the currently selected user language. If the language you wish to use is not there then a new translation can be initiated with the 'Add a New Language' utility - see below. By default a new install of webERP will only have the english - en_GB available. The most recent submitted language packs are available from the <a href="https://sourceforge.net/project/showfiles.php?group_id=70949">sourceforge webERP page</a></p>
 
 <p>Translations are maintained from the utilities menu - this does not have its own link on the main menu since it is an area that only the system administrator should be able to access. Unauthorised modification of translation files is therefore discouraged. The utlities menu is Z_index.php - so you can modify the URL on the main menu by prefixing it with Z_ - this brings up the utilities menu - only if you have system administrator permissions on your user account. The link to 'Maintain Language Files' is where the translations are managed.</p>
 
