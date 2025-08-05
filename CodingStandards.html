@@ -70,28 +70,29 @@
 		<fieldset>
 			<legend id="PageTitle" style="font-size:200%">Coding Conventions/Style</legend>
             <div id="PageDetail" dir="ltr"><p>It is a core goal of webERP to be
-            	easy to read for business people and newcomers to PHP. Much of these
-            	standards simply represent good programming practice and the
-            	conventions make the code consistently easy to read throughout (although
-            	arguably may increase verboseness).</p>
-            	<p>As this is a core goal of webERP consistency of style and the
-            	adherence to these conventions is regarded as critically important
-            	for all new code.</p>
-            	<p>All code in webERP must conform to these standards.</p>
+            	easy to read for business people and newcomers to PHP. The webERP Coding
+				Standards are not only good programming practice to reduce errors,
+				they make the code easier to follow - which also reduces errors. The
+				webERP Coding Standards are regarded as critically important and all
+				code is to conform.</p>
+				<p>The webERP Coding Standards are based on the <a href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/" target="_blank">WordPress Coding Standards</a> superceded by the following:</p>
             	<h2>PHP</h2>
-            	<p>Defer to simpler over better (simpler _is_ better!) and logical,
-            	explainable and supportable over easiest or quickest at that moment
-            	for the developer.</p>
+            	<p>Simpler is generally better. Prefer logical, well structured code
+				that is more easily understood over the easiest or quickest solution
+				at that moment.</p>
             	<h3>Code Tags</h3>
             	<p>Always use &lt;?php ?&gt; to delimit PHP code (not the &lt;? ?&gt;
-            	shorthand). Is the most portable way to include PHP code on
+            	shorthand). This is the most portable way to include PHP code on
             	differing operating systems and setups.</p>
+				<p>PHP files are not to include a closing tag.
             	<h3>Functions and Keywords</h3>
             	<p>All PHP keywords must be in lower case.</p>
             	<h3>Constants</h3>
             	<p>Constants should always be UPPER_CASE using underscores to
             	separate words. Where it is possible to use a literal instead of a
             	constant, a literal is preferred.</p>
+				<h3>Formatting</h3>
+            	<p>Code shall be formatted using tabs ("tab indented") instead of spaces.</p>
             	<h3>Spacing</h3>
             	<p>Lines of code should be separated by a blank line if readability
                 is improved (separating groups of lines, or separate a line from the
@@ -122,12 +123,12 @@
             	<p class="code">* giving an overview or</p>
             	<p class="code">* explaining a concept</p>
             	<p class="code">*/</p>
-            	<h3>Communicating to the User</h3>
-            	<p>The standard message function prnMsg should always be used for
-            	all messages to be echo'ed to the screen - this function has two
-            	parameters - the string to display and the message type , 'error',
-            	'warn', 'success', 'info' - there is a third optional parameter
-            	which is a prefix heading for the message.</p>
+				<p></p>
+            	<h3>User Notifications</h3>
+            	<p>The standard message function prnMsg() should be used to send
+				notifications to the user. prnMsg() has two required parameters, the
+				string to display and the message type, either 'error', 'warn', 'success'
+				or 'info' (a third optional parameter is a prefix heading for the message).</p>
             	<h3>Function/Class/Variable/Field Naming</h3>
             	<p>Long, self-explanatory variable names help a lot to decipher
             	what's contained in that variable. Descriptive names (using
