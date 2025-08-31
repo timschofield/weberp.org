@@ -4,7 +4,7 @@
 
 	<head>
         <title>webERP - Coding Standards</title>
-		
+
 		<meta charset='utf-8'>
 		<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,9 +12,9 @@
 
 		<link rel="canonical" href="https://weberp.org/CodingStandards.html" />
 		<link href="favicon.ico" rel='shortcut icon' type='image/x-icon'>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="css/style.css">
 	</head>
-	
+
 	<body id="home">
 		<header>
 			<a href="./index.html" class="ItemLink">
@@ -121,7 +121,7 @@
             	functions with descriptions, even referencing related scripts. The
             	goal is to help the future you and other developers to grok a script
             	and its role in webERP as quickly as possible (arguably at the
-            	expense of writing and maintaining comments). 
+            	expense of writing and maintaining comments).
             	</p>
             	<p>The code will tend to be self commenting with the aid of long
             	variable names and the addition of the context of variables.</p>
@@ -144,28 +144,28 @@
             	<h3>Function/Class/Variable/Field Naming</h3>
             	<p>Long, self-explanatory variable names help a lot to decipher
             	what's contained in that variable. Descriptive names (using
-            	PascalCase) are preferred over short variable names: e.g. 
+            	PascalCase) are preferred over short variable names: e.g.
             	</p>
             	<p><a name="code"></a>$a = 3.14159;</p>
-            	<p>should be avoided in favour of: 
+            	<p>should be avoided in favour of:
             	</p>
             	<p><a name="code Copy 1"></a>$Pi = 3.14159;</p>
             	<p>The variables $i $j and $k can be used as a counters.</p>
             	<p>As displayed above, there should be one space on either side of
             	an equals sign used to assign the return value of a function to a
             	variable. In the case of a block of related assignments, more space
-            	may be inserted to promote readability: 
+            	may be inserted to promote readability:
             	</p>
             	<p><a name="code Copy 2"></a>$Short = foo($bar);<br/>
             $LongVariable
-            	= foo($baz); 
+            	= foo($baz);
             	</p>
             	<p>Good descriptive variable names consisting of several words
             	appended together should have the first letter of each word
-            	capitalised. eg. 
+            	capitalised. eg.
             	</p>
             	<p><a name="code Copy 3"></a>$longvariablename = 1;</p>
-            	<p>should be written as: 
+            	<p>should be written as:
             	</p>
             	<p><a name="code Copy 4"></a>$LongVariableName = 1;</p>
             	<h3>Label Strings and Multi-Language</h3>
@@ -185,10 +185,10 @@
             	are tempted to abbreviate:</p>
             	<p><a name="code Copy 10"></a>$StartingCustomer =
             	$_POST['StartingCustomer'];</p>
-            	<p>or worse: 
+            	<p>or worse:
             	</p>
             	<p><a name="code Copy 11"></a>$s = $_POST['StartingCustomer'];</p>
-            	<p>This should be avoided in favour of using: 
+            	<p>This should be avoided in favour of using:
             	</p>
             	<p><a name="code Copy 12"></a>$_POST['StartingCustomer']</p>
             	<p>everywhere it is required so the reader can see where the
@@ -201,21 +201,21 @@
             	quotes (&quot;) - there is additional overhead for php in parsing
             	data within double quotes. They should only be used where absolutely
             	necessary and concatenation of variables is preferred to having
-            	variables inside double quotes. eg. 
+            	variables inside double quotes. eg.
             	</p>
             	<p><a name="code Copy 13"></a>echo &quot;Some text with a
             	$Variable&quot;;</p>
-            	<p>would be better written as: 
+            	<p>would be better written as:
             	</p>
             	<p><a name="code Copy 14"></a>echo _('Some text with a') . ' ' .
             	$Variable;</p>
             	<p>to reduce the parsing job required of the web-server. Notice all
             	strings need to be inside the gettext _() function.</p>
             	<p>Arrays and super global arrays should always have the element
-            	name within single quotes not doubles eg. 
+            	name within single quotes not doubles eg.
             	</p>
             	<p><a name="code Copy 15"></a>$_POST[&quot;FormVariableName&quot;]</p>
-            	<p>should be written as: 
+            	<p>should be written as:
             	</p>
             	<p><a name="code Copy 16"></a>$_POST['FormVariableName']</p>
             	<p>The only exception to this is that when constructing SQL
@@ -228,24 +228,24 @@
             	<p><a name="code Copy 17"></a>if
             	($OneTwoThree==$_POST['OneTwoThree']<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;and
-            	$MyRow['onetwothree']==$_SESSION['OneTwoThree']) { 
+            	$MyRow['onetwothree']==$_SESSION['OneTwoThree']) {
             	</p>
             	<p>All control structures (these include if, for, while, switch)
             	must always use &quot;1 True Brace&quot; style statement blocks.</p>
             	<p>You are strongly encouraged to always use curly braces even in
             	situations where they are technically optional. Having them
             	increases readability and decreases the likelihood of logic errors
-            	being introduced when new lines are added. eg. 
+            	being introduced when new lines are added. eg.
             	</p>
             	<p><a name="code Copy 18"></a>if ($VariableName == true) echo
             	_('Variable was true');</p>
             	<p>Whilst legal PHP syntax, this should be avoided in favour of the
-            	following syntax: 
+            	following syntax:
             	</p>
             	<p><a name="code Copy 19"></a>if ($VariableName == true) {<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;echo
             	_('Variable was true'); <br/>
-            } 
+            }
             	</p>
             	<p>Parenthesis should open on the same line (after a space) as the
             	initiating control structure and close the statement block at the
@@ -258,7 +258,7 @@
             } else { <br/>
             &nbsp;&nbsp;&nbsp;&nbsp;echo
             	'Variable was false'; <br/>
-            } /*end else $VariableName was false*/ 
+            } /*end else $VariableName was false*/
             	</p>
             	<p>This is the only time there should be anything other than a
             	comment on the closing curly brace line. Comments on a closing curly
@@ -279,13 +279,13 @@
             	compatibility.</p>
             	<p>HTML table cell tags in echo statements should use carriage
             	returns to keep cells together so it is easy to see what is in each
-            	cell. eg. 
+            	cell. eg.
             	</p>
             	<p><a name="code Copy 5"></a>echo '&lt;table&gt; &lt;tr&gt; &lt;td&gt;'
             	. _('Label text') . ':&lt;/td&gt; &lt;td&gt;' . $SomeVariable .
             	'&lt;/td&gt; &lt;td&gt;' . _('Some Other Label') . ':&lt;/td&gt; &lt;td
             	align=&quot;right&quot;&gt;' . number_format($SomeNumber,2) . '&lt;/td&gt;
-            	&lt;/tr&gt; &lt;/table&gt; '; 
+            	&lt;/tr&gt; &lt;/table&gt; ';
             	</p>
             	<p>Would be more easily digested and should be written as</p>
             	<p><a name="code Copy 6"></a>echo
@@ -335,7 +335,7 @@
             	ovamount+ovgst+ovfreight+ovdiscount as totalamt, currcode from
             	debtortrans inner join debtorsmaster on
             	debtortrans.debtorno=debtorsmaster.debtorno&quot;;</p>
-            	<p>is harder to read than: 
+            	<p>is harder to read than:
             	</p>
             	<p><a name="code Copy 23"></a>$SQL = &quot;SELECT
             	transno,<br/>
@@ -355,7 +355,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INNER
             	JOIN debtorsmaster<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ON
-            	debtortrans.debtorno=debtorsmaster.debtorno&quot;; 
+            	debtortrans.debtorno=debtorsmaster.debtorno&quot;;
             	</p>
             	<p>SQL keywords should be capitalised as above eg. SELECT, CASE,
             	FROM, WHERE, GROUP BY, ORDER BY, AS, INNER JOIN etc.</p>
