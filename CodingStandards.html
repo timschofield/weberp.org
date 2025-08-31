@@ -75,7 +75,10 @@
 				they make the code easier to follow - which also reduces errors. The
 				webERP Coding Standards are regarded as critically important and all
 				code is to conform.</p>
-				<p>The webERP Coding Standards are based on the <a href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/" target="_blank">WordPress Coding Standards</a> superceded by the following:</p>
+				<p>The webERP Coding Standards are based on 
+				<a href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/" target="_blank">WordPress Coding Standards</a>, 
+				superceded by the standards here and also README.md and doc/INSTALL.md 
+				in the webERP code.</p>
             	<h2>PHP</h2>
             	<p>Simpler is generally better. Prefer logical, well structured code
 				that is more easily understood over the easiest or quickest solution
@@ -84,13 +87,22 @@
             	<p>Always use &lt;?php ?&gt; to delimit PHP code (not the &lt;? ?&gt;
             	shorthand). This is the most portable way to include PHP code on
             	differing operating systems and setups.</p>
-				<p>PHP files are not to include a closing tag.
+				<p>Do not include a closing tag in a PHP file.</p>
             	<h3>Functions and Keywords</h3>
             	<p>All PHP keywords must be in lower case.</p>
             	<h3>Constants</h3>
             	<p>Constants should always be UPPER_CASE using underscores to
             	separate words. Where it is possible to use a literal instead of a
             	constant, a literal is preferred.</p>
+            	<h3>Include and Require File Paths</h3>
+            	<p>Include and require calls must give absolute paths using PathPrefix for the
+				target file. This avoids needing to know the directory of the currently executing
+				script which can be confusing as some scripts can be run either via an include call
+				or executed standalone as a top-level webpage. Using a full path also increases
+				execution speed and makes scripts more robust if they need to be relocated.</p>
+				<h3>$RootPath</h3>
+				<p>$RootPath is calculated in session.php and adjusted in config.php based on
+				$DirectoryLevelsDeep.</p>
 				<h3>Formatting</h3>
             	<p>Code shall be formatted using tabs ("tab indented") instead of spaces.</p>
             	<h3>Spacing</h3>
