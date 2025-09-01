@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta data-react-helmet="true" name="description" content="webERP is a practical web-based open-source ERP system"/>
 
-		<link rel="canonical" href="https://weberp.org/Development.html" />
+		<link rel="canonical" href="https://weberp.org/Development.php" />
 		<link href="favicon.ico" rel='shortcut icon' type='image/x-icon'>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
@@ -42,7 +42,7 @@
 					</a>
 				</div>
 				<div class="nav-item">
-					<a href="./Development.html">
+					<a href="./Development.php">
 					<img class="icons" src="images/software.avif" />
 					<span class="nav-caption">Development</span>
 					</a>
@@ -68,14 +68,49 @@
 			</span>
 		</header>
 		<section>
+			<?php
+				require(__DIR__ . '/DocParser.php');
+
+				use Symfony\Component\Dotenv\Dotenv;
+				$dotenv = new Dotenv();
+				// loads .env, .env.local
+				$dotenv->loadEnv(__DIR__.'/.env');
+				unset($dotenv);
+
+				$docsDir = $_ENV['DEMO_DIR'] . '/doc/developers';
+				$docParse = new DocParser($docsDir);
+
+				$renderedText = null;
+				if (isset($_GET['file']) ) {
+					try {
+						$renderedText = $docParse->renderDoc($_GET['file']);
+					} catch (Exception $e) {
+						// do nothing
+					}
+				}
+
+				if ($renderedText !== null) {
+					echo $renderedText;
+				} else {
+			?>
 			<h1 class="main-title">General</h1>
 			<ul>
                 <li><p>Contributors retain copyright for their work. All contributions are presumed to be provided according to the terms of the GNU Public Licence v2 (GPL v2).</p></li>
             </ul>
 
 			<h1 class="main-title">Developer's documentation</h1>
-			<p>The developer-oriented documentation is now maintained within the application source code and can be viewed <a href="https://github.com/timschofield/webERP/blob/master/doc/developers/">online</a>  at GitHub.</p>
-			<p>That includes the Development Workflow and Coding Standards docs previously available on this website.</p>
+			<p>The developer-oriented documentation is now maintained within the application source code and can be viewed online, both on this site and <a href="https://github.com/timschofield/webERP/blob/master/doc/developers/">on GitHub</a>.</p>
+			<p>It contains the following guides:</p>
+			<ul>
+			<?php
+					foreach($docParse->scanDir() as $fileName) {
+						echo '<li><a href="Development.php?file=' . htmlspecialchars($fileName) .'">' . htmlspecialchars(ucfirst(strtolower(str_replace('_', ' ', preg_replace('/\.md$/', '', $fileName))))) . "</a></li>\n";
+					}
+			?>
+			</ul>
+			<?php
+				}
+			?>
 		</section>
 		<footer>
 		<div class="badges-container">

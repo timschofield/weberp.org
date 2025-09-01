@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'type' => 'project',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => '1eaa8e01a93451d926b128bbf500de4e45765d56',
+        'name' => 'timschofield/weberp.org',
+        'dev' => true,
+    ),
+    'versions' => array(
+        'erusev/parsedown' => array(
+            'pretty_version' => '1.7.4',
+            'version' => '1.7.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../erusev/parsedown',
+            'aliases' => array(),
+            'reference' => 'cb17b6477dfff935958ba01325f2e8a2bfa6dab3',
+            'dev_requirement' => false,
+        ),
+        'symfony/dotenv' => array(
+            'pretty_version' => 'v6.4.24',
+            'version' => '6.4.24.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/dotenv',
+            'aliases' => array(),
+            'reference' => '234b6c602f12b00693f4b0d1054386fb30dfc8ff',
+            'dev_requirement' => false,
+        ),
+        'timschofield/weberp.org' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => '1eaa8e01a93451d926b128bbf500de4e45765d56',
+            'dev_requirement' => false,
+        ),
+    ),
+);

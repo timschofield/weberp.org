@@ -1,0 +1,14 @@
+{
+	"name": "timschofield/weberp.org",
+	"type": "project",
+	"require": {
+		"php": "^8.1",
+		"erusev/parsedown": "*",
+		"symfony/dotenv": "*"
+	},
+	"config": {
+		"platform": {
+			"php": "8.1.0"
+		}
+	}
+}
