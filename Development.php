@@ -3,14 +3,14 @@
 <html lang="en">
 
 	<head>
-		<title>webERP - Contributing</title>
+		<title>webERP - Development</title>
 
 		<meta charset='utf-8'>
 		<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta data-react-helmet="true" name="description" content="webERP is a practical web-based open-source ERP system"/>
 
-		<link rel="canonical" href="https://weberp.org/Contributing.html" />
+		<link rel="canonical" href="https://weberp.org/Development.php" />
 		<link href="favicon.ico" rel='shortcut icon' type='image/x-icon'>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
@@ -68,22 +68,49 @@
 			</span>
 		</header>
 		<section>
-			<h1>Contribute to webERP</h1>
-			<p>There are many ways people can contribute to webERP. You don't necessarily have to be a programmer to make a difference. There are also opportunities for documentation writers,
-			graphic designers, and translators</p>
-			<h2>Developers</h2>
-			<p>Mostly, webERP is written in PHP, but there is also HTML, JavaScript, and CSS code.</p>
-			<p>Our code is hosted on GitHub, and there is a full explanation on how to <a href="Development.php">develop webERP using Git is written here</a>. Below is a few jobs that are
-			outstanding jobs that need doing. If you fancy trying one of these, just leave a message on the GitHub discussion page for this project. See the discussions page for help on
-			talking to us. This list will be frequently updated, so if you don't see anything you fancy having a go at, just keep checking back.</p>
-			<h3>To-Do list for developers</h3>
-			<ol>
-				<li>Rationalise the CSS. <p>The CSS is structured badly. Each theme is split into two directories, so for the aguapop theme there is an aguapop directory, and an aguapop-rtl
-		directory. If the user has selected aguapop for their theme and their language is a right to left language, then webERP will use the CSS files in the aguapop-rtl directory, but if
-		their language is a left to right language, then webERP will use the CSS files in the aguapop directory.</p>
-				<p>This is hugely wasteful, as there is a huge amount of CSS that is duplicated in both aguapop and aguapop-rtl themes. When one of them is altered the developer needs
-		to remember to alter both.</p></li>
-			</ol>
+			<?php
+				require(__DIR__ . '/DocParser.php');
+
+				use Symfony\Component\Dotenv\Dotenv;
+				$dotenv = new Dotenv();
+				// loads .env, .env.local
+				$dotenv->loadEnv(__DIR__.'/.env');
+				unset($dotenv);
+
+				$docsDir = $_ENV['DEMO_DIR'] . '/doc/developers';
+				$docParse = new DocParser($docsDir);
+
+				$renderedText = null;
+				if (isset($_GET['file']) ) {
+					try {
+						$renderedText = $docParse->renderDoc($_GET['file']);
+					} catch (Exception $e) {
+						// do nothing
+					}
+				}
+
+				if ($renderedText !== null) {
+					echo $renderedText;
+				} else {
+			?>
+			<h1 class="main-title">General</h1>
+			<ul>
+                <li><p>Contributors retain copyright for their work. All contributions are presumed to be provided according to the terms of the GNU Public Licence v2 (GPL v2).</p></li>
+            </ul>
+
+			<h1 class="main-title">Developer's documentation</h1>
+			<p>The developer-oriented documentation is now maintained within the application source code and can be viewed online, both on this site and <a href="https://github.com/timschofield/webERP/blob/master/doc/developers/">on GitHub</a>.</p>
+			<p>It contains the following guides:</p>
+			<ul>
+			<?php
+					foreach($docParse->scanDir() as $fileName) {
+						echo '<li><a href="Development.php?file=' . htmlspecialchars($fileName) .'">' . htmlspecialchars(ucfirst(strtolower(str_replace('_', ' ', preg_replace('/\.md$/', '', $fileName))))) . "</a></li>\n";
+					}
+			?>
+			</ul>
+			<?php
+				}
+			?>
 		</section>
 		<footer>
 		<div class="badges-container">
