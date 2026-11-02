@@ -199,6 +199,7 @@ margin: 10px;
 padding: 20px;
 min-width:40%;
 font-size:1rem;
+font-weight:normal;
 color:#0D1117;
 border-radius:5px;
 }
@@ -215,11 +216,13 @@ border-radius:5px;
 width:48px;
 height:48px;
 margin-right:5px;
+vertical-align:middle;
 }
 .title{
 padding-left:8px;
 font-size:2rem;
-margin-bottom:15px
+margin-bottom:15px;
+vertical-align:middle;
 }
 .ItemLink{
 text-decoration:none;
